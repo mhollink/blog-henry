@@ -2,6 +2,8 @@ import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import {marked} from 'marked';
 import matter from 'gray-matter';
+import {PageHeader} from "../components/page-header/PageHeader.tsx";
+import type {PostMeta} from "../types/post-meta.ts";
 
 marked.use({gfm: true, breaks: false});
 
@@ -13,7 +15,7 @@ export function PostView() {
 
 function Post({filename}: { filename: string }) {
     const [content, setContent] = useState<string>('');
-    const [meta, setMeta] = useState<{ title?: string; date?: string, cover?: string }>({});
+    const [meta, setMeta] = useState<Omit<PostMeta, "filename">>({});
 
     useEffect(() => {
         fetch(`/posts/${filename}.md`)
@@ -26,11 +28,18 @@ function Post({filename}: { filename: string }) {
     }, [filename]);
 
     return (
-        <article style={{maxWidth: 700, margin: '2rem auto', padding: '0 1rem'}}>
-            {meta.cover && <img src={meta.cover} alt={meta.title} style={{width: "100%", borderRadius: 8}}/>}
-            {meta.titel && <h1>{meta.titel}</h1>}
-            {meta.datum && <p><small>{meta.datum}</small></p>}
-            <div dangerouslySetInnerHTML={{__html: content}}/>
-        </article>
+        <div className="inset-center">
+            <PageHeader/>
+            <article className="post-view">
+                <div className="post-view__data">
+                    {meta.cover && <img src={meta.cover} alt={meta.titel}/>}
+                    {meta.titel && <h1>{meta.titel}</h1>}
+                    {meta.datum && <p><small>{meta.datum}</small></p>}
+                </div>
+                <div className="post-view__data"
+                     dangerouslySetInnerHTML={{__html: content}}/>
+            </article>
+        </div>
+
     );
 }
