@@ -1,0 +1,169 @@
+// Minimal modern reset / base
+$base-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$base-font-size: 16px !default;
+$base-line-height: 1.45 !default;
+$max-content-width: 72rem !default;
+
+// Small helper mixin for visually-hidden (accessible)
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0 0 0 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+// 1. Box sizing — make sizing predictable
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// 2. Remove default margins and set base typography
+html, body, #root {
+  height: 100%;
+}
+
+html {
+  font-size: $base-font-size;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: $base-font-family;
+  line-height: $base-line-height;
+  color: inherit;
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: transparent;
+}
+
+// 3. Headings & paragraphs
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: inherit;
+}
+
+p {
+  margin: 0 0 1rem 0;
+}
+
+// 4. Lists
+ul, ol {
+  margin: 0 0 1rem 0;
+  padding-left: 1.25rem;
+}
+
+li {
+  margin: 0.25rem 0;
+}
+
+// 5. Links — leave color to your theme but reset text decoration
+a {
+  color: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+// 6. Images, videos, and media
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-style: none;
+}
+
+// 7. Forms — sane defaults, but keep native accessibility
+input, button, textarea, select {
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+// 8. Tables
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// 9. Remove default focus outline only visually but keep accessible focus ring
+//    We prefer to keep an accessible visible focus. This provides a subtle default.
+:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+}
+
+:focus:not(:focus-visible) {
+  /* hide the focus ring for mouse users where focus-visible isn't triggered */
+  box-shadow: none;
+  outline: none;
+}
+
+// 10. Accessibility helpers
+.visually-hidden {
+  @include visually-hidden;
+}
+
+.inset-center {
+  /* small helper to center content in a constrained width */
+  max-width: $max-content-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+// 11. Reduced motion
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// 12. Utility: visually pleasant default for code blocks
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+pre {
+  overflow: auto;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  background: #f6f8fa;
+  margin: 0 0 1rem 0;
+}
+
+// 13. Small print (footers, metadata)
+.small {
+  font-size: 0.875rem;
+  color: #666;
+}

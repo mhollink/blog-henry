@@ -1,0 +1,30 @@
+// src/styles/_background.scss
+
+body {
+  position: relative;
+  background-color: #fafafa; // base color
+  overflow-x: hidden; // prevent scrollbars from rotation overflow
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  background-attachment: fixed;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: linear-gradient(
+                  170deg, // controls tilt
+                  transparent 45.9%,
+                  rgba(141, 182, 0, 0.3) 46%,
+                  rgba(141, 182, 0, 0.3) 49%,
+                  rgba(141, 182, 0, 0.7) 49.1%,
+                  rgba(141, 182, 0, 0.7) 52%,
+                  rgba(141, 182, 0, 1) 52.1%,
+                  rgba(141, 182, 0, 1) 55%,
+                  transparent 55.1%
+  );
+  pointer-events: none; // so it doesn’t block clicks
+}

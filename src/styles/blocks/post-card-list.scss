@@ -1,0 +1,20 @@
+
+.post-card-list {
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  padding: 0 0 5rem 0;
+
+  & > a {
+    width: calc(33% - 1rem);
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+
+}

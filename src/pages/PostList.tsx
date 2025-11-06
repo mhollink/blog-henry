@@ -1,5 +1,8 @@
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import {useEffect, useState} from 'react';
+import {Link} from 'react-router-dom';
+import {PostCard} from "../components/post-card/PostCard.tsx";
+import {PostCardList} from "../components/post-card-list/PostCardList.tsx";
+import {PageHeader} from "../components/page-header/PageHeader.tsx";
 
 type PostMeta = { file: string; title: string };
 
@@ -7,18 +10,19 @@ export function PostList() {
     const [posts, setPosts] = useState<PostMeta[]>([]);
 
     useEffect(() => {
-        fetch('/posts/posts.json')
+        fetch('./posts.json')
             .then(res => res.json())
             .then(setPosts);
     }, []);
 
     return (
-        <ul style={{ maxWidth: 700, margin: '2rem auto', padding: '0 1rem' }}>
-            {posts.map(post => (
-                <li key={post.file}>
-                    <Link to={`/post/${post.file}`}>{post.title}</Link>
-                </li>
-            ))}
-        </ul>
+        <div className="inset-center">
+            <PageHeader/>
+            <PostCardList cards={posts.map(post => (
+                <Link key={post.filename} to={`/post/${post.filename}`}>
+                    <PostCard post={post}/>
+                </Link>
+            ))}/>
+        </div>
     );
 }
