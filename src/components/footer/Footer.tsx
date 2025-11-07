@@ -27,7 +27,7 @@ export const Footer = () => (
             flexDirection: 'column',
             alignItems: 'center',
             gap: {xs: 4, sm: 8},
-            py: {xs: 8, sm: 10},
+            pb: {xs: 8, sm: 10},
             textAlign: {sm: 'center', md: 'left'},
         }}
     >

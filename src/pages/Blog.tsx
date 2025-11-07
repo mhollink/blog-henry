@@ -12,6 +12,7 @@ import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import Grid from '@mui/material/Grid';
 import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
 import {PostCard} from "../components/post-card/PostCard.tsx";
+import {LatestBlogs} from "../components/latests/LatestBlogs.tsx";
 
 function SearchInput() {
     return (
@@ -47,7 +48,8 @@ function BlogSearch({breakpoint}: { breakpoint: "sm" | "sx" }) {
             }}
         >
             <SearchInput/>
-            <IconButton size="small" aria-label="RSS feed">
+            <IconButton size="small" aria-label="RSS feed"
+                        sx={{minWidth: 40, aspectRatio: 1}}>
                 <RssFeedRoundedIcon/>
             </IconButton>
         </Box>
@@ -173,7 +175,7 @@ export const Blog = () => {
                         </Grid>
                     ))}
                 </Grid>
-
+                <LatestBlogs blogs={posts} />
             </Box>
         </Container>
     );

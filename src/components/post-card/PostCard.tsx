@@ -8,6 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from "@mui/material/Typography"
 import {styled} from "@mui/material/styles";
 import {slugify} from "../../utils";
+import {BlogAuthor} from "../blog-author/BlogAuthor.tsx";
 
 const StyledCard = styled(Card)(({theme}) => ({
     display: 'flex',
@@ -73,38 +74,17 @@ export const PostCard: FunctionComponent<PostCardProps> = ({post, handleFocus, h
                 }}
             />
             <StyledCardContent>
-                <Typography gutterBottom variant="caption" component="div">
+                <Typography gutterBottom variant="caption" component="div" color="primary">
                     {post.tag}
                 </Typography>
-                <Typography gutterBottom variant="h6" component="div">
+                <Typography gutterBottom variant="h6" component="div" fontWeight="600">
                     {post.titel}
                 </Typography>
                 <StyledTypography variant="body2" color="text.secondary" gutterBottom>
                     {post.bijschrift}
                 </StyledTypography>
             </StyledCardContent>
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    gap: 2,
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    padding: '16px',
-                }}
-            >
-                <Box sx={{display: 'flex', flexDirection: 'row', gap: 1, alignItems: 'center'}}>
-                    <Avatar
-                        alt={post.schrijver}
-                        src={`assets/schrijvers/${slugify(post.schrijver)}.png`}
-                        sx={{width: 24, height: 24}}
-                    />
-                    <Typography variant="caption">
-                        {post.schrijver}
-                    </Typography>
-                </Box>
-                <Typography variant="caption">{post.datum}</Typography>
-            </Box>
+            <BlogAuthor schrijver={post.schrijver} datum={post.datum} />
         </StyledCard>
     )
 

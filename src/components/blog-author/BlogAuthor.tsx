@@ -1,0 +1,31 @@
+import Avatar from "@mui/material/Avatar";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import {slugify} from "../../utils";
+
+export const BlogAuthor = ({schrijver, datum}: { schrijver: string, datum: string }) => {
+    return (
+        <Box
+            sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                gap: 2,
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '16px',
+            }}
+        >
+            <Box sx={{display: 'flex', flexDirection: 'row', gap: 1, alignItems: 'center'}}>
+                <Avatar
+                    alt={schrijver}
+                    src={`assets/schrijvers/${slugify(schrijver)}.png`}
+                    sx={{width: 24, height: 24}}
+                />
+                <Typography variant="caption">
+                    {schrijver}
+                </Typography>
+            </Box>
+            <Typography variant="caption">{datum}</Typography>
+        </Box>
+    )
+}
