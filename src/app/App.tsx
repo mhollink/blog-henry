@@ -1,15 +1,14 @@
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
-import {PostList} from '../pages/PostList';
-import {PostView} from '../pages/PostView';
+import {Outlet} from 'react-router-dom';
+import {Header} from "../components/header/Header";
+import {Footer} from "../components/footer/Footer";
 
 export function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<PostList/>}/>
-                <Route path="/post/:filename" element={<PostView/>}/>
-            </Routes>
-        </BrowserRouter>
+        <>
+            <Header/>
+            <Outlet/>
+            <Footer/>
+        </>
     );
 }
 
