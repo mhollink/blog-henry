@@ -71,7 +71,7 @@ function BlogTitle() {
 
 function BlogCategory({selectCategory, activeCategory, categories}: {
     categories: string[]
-    selectCategory?: (category: string) => void,
+    selectCategory: (category: string) => void,
     activeCategory: string
 }) {
     return (

@@ -16,15 +16,15 @@ export function PostView() {
 
 function Post({filename}: { filename: string }) {
     const [content, setContent] = useState<string>('');
-    const [meta, setMeta] = useState<Omit<PostMeta, "filename">>({});
+    const [meta, setMeta] = useState<Partial<Omit<PostMeta, "filename">>>({});
 
     useEffect(() => {
         fetch(`/posts/${filename}.md`)
             .then(res => res.text())
             .then(text => {
                 const {data, content} = matter(text);
-                setMeta(data);
-                setContent(marked.parse(content));
+                setMeta(data as Omit<PostMeta, "filename">);
+                setContent(marked.parse(content) as string);
             });
     }, [filename]);
 

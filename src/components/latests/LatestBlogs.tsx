@@ -1,12 +1,14 @@
 import * as React from 'react';
+import {Link as RouterLink} from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import Pagination from '@mui/material/Pagination';
+import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
 import {BlogAuthor} from "../blog-author/BlogAuthor.tsx";
 import type {PostMeta} from "../../types/post-meta.ts";
+import Stack from "@mui/material/Stack";
 
 const StyledTypography = styled(Typography)({
     display: '-webkit-box',
@@ -80,9 +82,9 @@ export function LatestBlogs({blogs}: {blogs: PostMeta[]}) {
                                 height: '100%',
                             }}
                         >
-                            <Typography gutterBottom variant="caption" component="div">
-                                {blog.tag}
-                            </Typography>
+                            <Stack component="div" gap={1} direction={"row"}>
+                                {blog.tags.map((tag, index) => (<Chip key={index} label={tag} variant="outlined" size={"small"} />))}
+                            </Stack>
                             <TitleTypography
                                 gutterBottom
                                 variant="h6"
@@ -90,6 +92,18 @@ export function LatestBlogs({blogs}: {blogs: PostMeta[]}) {
                                 onBlur={handleBlur}
                                 tabIndex={0}
                                 className={focusedCardIndex === index ? 'Mui-focused' : ''}
+                                component={RouterLink}
+                                to={`/post/${blog.filename}`}
+                                sx={{
+                                    textDecoration: 'none',
+                                    color: 'inherit',
+                                    '&:hover': {
+                                        textDecoration: 'none',
+                                    },
+                                    '&:focus': {
+                                        textDecoration: 'none',
+                                    },
+                                }}
                             >
                                 {blog.titel}
                                 <NavigateNextRoundedIcon
