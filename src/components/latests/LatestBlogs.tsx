@@ -9,6 +9,8 @@ import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
 import {BlogAuthor} from "../blog-author/BlogAuthor.tsx";
 import type {PostMeta} from "../../types/post-meta.ts";
 import Stack from "@mui/material/Stack";
+import type {OverridableComponent} from "@mui/material/OverridableComponent";
+import type {TypographyTypeMap} from "@mui/material/Typography";
 
 const StyledTypography = styled(Typography)({
     display: '-webkit-box',
@@ -53,7 +55,7 @@ const TitleTypography = styled(Typography)(({ theme }) => ({
     '&:hover::before': {
         width: '100%',
     },
-}));
+})) as OverridableComponent<TypographyTypeMap>;
 
 export function LatestBlogs({blogs}: {blogs: PostMeta[]}) {
     const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(
