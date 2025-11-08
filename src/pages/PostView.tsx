@@ -2,8 +2,9 @@ import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import {marked} from 'marked';
 import matter from 'gray-matter';
-import {PageHeader} from "../components/page-header/PageHeader.tsx";
 import type {PostMeta} from "../types/post-meta.ts";
+import Container from '@mui/material/Container';
+
 
 marked.use({gfm: true, breaks: false});
 
@@ -28,8 +29,11 @@ function Post({filename}: { filename: string }) {
     }, [filename]);
 
     return (
-        <div className="inset-center">
-            <PageHeader/>
+        <Container
+            maxWidth="lg"
+            component="main"
+            sx={{display: 'flex', flexDirection: 'column', my: 16, gap: 4}}
+        >
             <article className="post-view">
                 <div className="post-view__data">
                     {meta.cover && <img src={meta.cover} alt={meta.titel}/>}
@@ -39,7 +43,7 @@ function Post({filename}: { filename: string }) {
                 <div className="post-view__data"
                      dangerouslySetInnerHTML={{__html: content}}/>
             </article>
-        </div>
+        </Container>
 
     );
 }

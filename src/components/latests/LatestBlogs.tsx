@@ -1,6 +1,4 @@
 import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import AvatarGroup from '@mui/material/AvatarGroup';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Pagination from '@mui/material/Pagination';
@@ -70,9 +68,6 @@ export function LatestBlogs({blogs}: {blogs: PostMeta[]}) {
 
     return (
         <div>
-            <Typography variant="h2" gutterBottom>
-                Latest
-            </Typography>
             <Grid container spacing={8} columns={12} sx={{ my: 4 }}>
                 {blogs.map((blog, index) => (
                     <Grid key={index} size={{ xs: 12, sm: 6 }}>
@@ -111,9 +106,9 @@ export function LatestBlogs({blogs}: {blogs: PostMeta[]}) {
                     </Grid>
                 ))}
             </Grid>
-            <Box sx={{ display: 'flex', flexDirection: 'row', pt: 4, justifyContent: 'center', alignItems: 'center' }}>
-                <Pagination hidePrevButton hideNextButton count={20} size="small" siblingCount={2} />
-            </Box>
+            {/*<Box sx={{ display: 'flex', flexDirection: 'row', pt: 4, justifyContent: 'center', alignItems: 'center' }}>*/}
+            {/*    <Pagination hidePrevButton hideNextButton count={20} size="small" siblingCount={2} />*/}
+            {/*</Box>*/}
         </div>
     );
 }

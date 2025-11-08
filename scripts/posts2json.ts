@@ -16,9 +16,9 @@ const posts = fs
 
         return {filename, ...data,};
     }).sort((a, b) => {
-        if (!a.date) return 1;
-        if (!b.date) return -1;
-        return new Date(b.date).getTime() - new Date(a.date).getTime();
+        if (!a.datum) return 1;
+        if (!b.datum) return -1;
+        return new Date(b.datum).getTime() - new Date(a.datum).getTime();
     });
 
 fs.writeFileSync(outputFile, JSON.stringify(posts, null, 2), "utf8");

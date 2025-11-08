@@ -1,14 +1,15 @@
 import type {FunctionComponent} from "react";
+import {Link as RouterLink} from 'react-router-dom';
 import type {PostMeta} from "../../types/post-meta.ts";
-import Avatar from '@mui/material/Avatar';
-import Box from '@mui/material/Box';
 import Card from "@mui/material/Card"
 import CardContent from "@mui/material/CardContent"
 import CardMedia from '@mui/material/CardMedia';
+import CardActionArea from '@mui/material/CardActionArea';
 import Typography from "@mui/material/Typography"
 import {styled} from "@mui/material/styles";
-import {slugify} from "../../utils";
 import {BlogAuthor} from "../blog-author/BlogAuthor.tsx";
+import Chip from "@mui/material/Chip";
+import Stack from "@mui/material/Stack";
 
 const StyledCard = styled(Card)(({theme}) => ({
     display: 'flex',
@@ -63,28 +64,44 @@ export const PostCard: FunctionComponent<PostCardProps> = ({post, handleFocus, h
             tabIndex={0}
             className={focussed ? 'Mui-focused' : ''}
         >
-            <CardMedia
-                component="img"
-                alt="green iguana"
-                image={post.cover}
+            <CardActionArea
+                component={RouterLink}
+                to={`/post/${post.filename}`}
                 sx={{
-                    aspectRatio: '16 / 9',
-                    borderBottom: '1px solid',
-                    borderColor: 'divider',
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    '&:hover': {
+                        textDecoration: 'none',
+                    },
+                    '&:focus': {
+                        textDecoration: 'none',
+                    },
                 }}
-            />
-            <StyledCardContent>
-                <Typography gutterBottom variant="caption" component="div" color="primary">
-                    {post.tag}
-                </Typography>
-                <Typography gutterBottom variant="h6" component="div" fontWeight="600">
-                    {post.titel}
-                </Typography>
-                <StyledTypography variant="body2" color="text.secondary" gutterBottom>
-                    {post.bijschrift}
-                </StyledTypography>
-            </StyledCardContent>
-            <BlogAuthor schrijver={post.schrijver} datum={post.datum} />
+            >
+                <CardMedia
+                    component="img"
+                    alt="green iguana"
+                    image={post.cover}
+                    sx={{
+                        aspectRatio: '16 / 9',
+                        borderBottom: '1px solid',
+                        borderColor: 'divider',
+                    }}
+                />
+                <StyledCardContent>
+                    <Stack component="div" gap={1} direction={"row"}>
+                        {post.tags.map((tag, index) => <Chip label={tag} key={index} color={"primary"}
+                                                             size={"small"}/>)}
+                    </Stack>
+                    <Typography gutterBottom variant="h6" component="div" fontWeight="600">
+                        {post.titel}
+                    </Typography>
+                    <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                        {post.bijschrift}
+                    </StyledTypography>
+                </StyledCardContent>
+                <BlogAuthor schrijver={post.schrijver} datum={post.datum}/>
+            </CardActionArea>
         </StyledCard>
     )
 

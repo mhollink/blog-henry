@@ -5,5 +5,6 @@ export type PostMeta = {
     bijschrift: string;
     datum: string;
     schrijver: string;
-    tag: string;
+    tags: string[];
+    highlight?: number;
 }

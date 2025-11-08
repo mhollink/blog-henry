@@ -13,6 +13,7 @@ import Grid from '@mui/material/Grid';
 import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
 import {PostCard} from "../components/post-card/PostCard.tsx";
 import {LatestBlogs} from "../components/latests/LatestBlogs.tsx";
+import type {PostMeta} from "../types/post-meta.ts";
 
 function SearchInput() {
     return (
@@ -35,7 +36,7 @@ function SearchInput() {
     );
 }
 
-function BlogSearch({breakpoint}: { breakpoint: "sm" | "sx" }) {
+function BlogSearch({breakpoint}: { breakpoint: "sm" | "xs" }) {
     const display = breakpoint === "sm" ? {xs: 'none', sm: 'flex'} : {xs: 'flex', sm: 'none'};
     return (
         <Box
@@ -68,7 +69,11 @@ function BlogTitle() {
     )
 }
 
-function BlogCategory({selectCategory}: { selectCategory?: () => void }) {
+function BlogCategory({selectCategory, activeCategory, categories}: {
+    categories: string[]
+    selectCategory?: (category: string) => void,
+    activeCategory: string
+}) {
     return (
         <Box
             sx={{
@@ -89,34 +94,18 @@ function BlogCategory({selectCategory}: { selectCategory?: () => void }) {
                     overflow: 'auto',
                 }}
             >
-                <Chip onClick={selectCategory} size="medium" label="Alle categorieën"/>
-                <Chip
-                    onClick={selectCategory}
-                    size="medium"
-                    label="Persoonlijk"
-                    sx={{
-                        backgroundColor: 'transparent',
-                        border: 'none',
-                    }}
-                />
-                <Chip
-                    onClick={selectCategory}
-                    size="medium"
-                    label="Brief"
-                    sx={{
-                        backgroundColor: 'transparent',
-                        border: 'none',
-                    }}
-                />
-                <Chip
-                    onClick={selectCategory}
-                    size="medium"
-                    label="Mijlpaal"
-                    sx={{
-                        backgroundColor: 'transparent',
-                        border: 'none',
-                    }}
-                />
+                {categories.map((category) => (
+                    <Chip
+                        onClick={() => selectCategory(category)}
+                        size="medium"
+                        label={category}
+                        sx={{
+                            backgroundColor: theme => activeCategory === category ? theme.palette.primary.main : 'transparent',
+                            color: activeCategory === category ? 'white' : 'black',
+                            border: 'none',
+                        }}
+                    />
+                ))}
             </Box>
             <BlogSearch breakpoint={"sm"}/>
         </Box>
@@ -133,10 +122,12 @@ const blogSizes = [
 
 export const Blog = () => {
     const [posts, setPosts] = useState<PostMeta[]>([]);
+    const [visiblePosts, setVisiblePosts] = useState<PostMeta[]>([]);
     const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(null);
+    const [activeCategory, setActiveCategory] = React.useState<string>("Alle categorieën");
 
-    const handleClick = () => {
-        console.info('You clicked the filter chip.');
+    const handleClick = (category: string) => {
+        setActiveCategory(category);
     };
 
     const handleFocus = (index: number) => {
@@ -153,6 +144,14 @@ export const Blog = () => {
             .then(setPosts);
     }, []);
 
+    useEffect(() => {
+        if (activeCategory === "Alle categorieën") {
+            setVisiblePosts(posts);
+        } else {
+            setVisiblePosts(posts.filter(post => post.tags.includes(activeCategory)));
+        }
+    }, [posts, activeCategory]);
+
     return (
         <Container
             maxWidth="lg"
@@ -162,9 +161,18 @@ export const Blog = () => {
             <Box sx={{display: 'flex', flexDirection: 'column', gap: 4}}>
                 <BlogTitle/>
                 <BlogSearch breakpoint={"xs"}/>
-                <BlogCategory selectCategory={handleClick}/>
+                <BlogCategory
+                    categories={[
+                        "Alle categorieën",
+                        "Persoonlijk",
+                        "Brief",
+                        "Mijlpaal"
+                    ]}
+                    selectCategory={handleClick}
+                    activeCategory={activeCategory}
+                />
                 <Grid container spacing={2} columns={12}>
-                    {posts.slice(0, 5).map((post, index) => (
+                    {visiblePosts.slice(0, 5).map((post, index) => (
                         <Grid size={blogSizes[index]} key={index}>
                             <PostCard
                                 post={post}
@@ -175,7 +183,7 @@ export const Blog = () => {
                         </Grid>
                     ))}
                 </Grid>
-                <LatestBlogs blogs={posts} />
+                <LatestBlogs blogs={visiblePosts.slice(5)}/>
             </Box>
         </Container>
     );

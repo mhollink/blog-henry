@@ -19,7 +19,8 @@ export const BlogAuthor = ({schrijver, datum}: { schrijver: string, datum: strin
                 <Avatar
                     alt={schrijver}
                     src={`assets/schrijvers/${slugify(schrijver)}.png`}
-                    sx={{width: 24, height: 24}}
+                    sx={{width: 24, height: 24, bgcolor: theme => theme.palette.primary.main }}
+
                 />
                 <Typography variant="caption">
                     {schrijver}

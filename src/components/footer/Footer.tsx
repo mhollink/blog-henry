@@ -6,6 +6,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import StarIcon from '@mui/icons-material/Star';
 
 function Copyright() {
     return (
@@ -59,6 +60,15 @@ export const Footer = () => (
                 useFlexGap
                 sx={{justifyContent: 'left', color: 'text.secondary'}}
             >
+                <IconButton
+                    color="inherit"
+                    size="small"
+                    href="https://stars.osr.org/henry-ac-hollink"
+                    aria-label="Online Star Register"
+                    sx={{alignSelf: 'center'}}
+                >
+                    <StarIcon/>
+                </IconButton>
                 <IconButton
                     color="inherit"
                     size="small"

@@ -1,5 +1,6 @@
 import type {FunctionComponent} from "react";
 import * as React from 'react';
+import {Link as RouterLink} from 'react-router-dom';
 import {alpha, styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import AppBar from '@mui/material/AppBar';
@@ -63,13 +64,13 @@ export const Header: FunctionComponent = () => {
                             <Typography variant="h5" component="h1" color="primary">Henry Hollink</Typography>
                         </Box>
                         <Box sx={{display: {xs: 'none', md: 'flex'}, gap: 2}}>
-                            <Button variant="text" color="primary" size="small">
+                            <Button variant="text" color="primary" size="small" component={RouterLink} to={"/"}>
                                 Blog
                             </Button>
-                            <Button variant="text" color="primary" size="small">
+                            <Button variant="text" color="primary" size="small" component={RouterLink} to={"/over-henry"}>
                                 Over Henry
                             </Button>
-                            <Button variant="text" color="primary" size="small">
+                            <Button variant="text" color="primary" size="small" component={RouterLink} to={"/contact"}>
                                 Contact
                             </Button>
                         </Box>

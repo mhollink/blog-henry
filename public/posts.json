@@ -1,56 +1,39 @@
 [
   {
-    "filename": "2025-01-15-hello-world",
-    "cover": "/assets/posts/images/winterlicht.png",
-    "titel": "Terugblik op een stille winter",
-    "bijschrift": "De winter was lang dit jaar. Niet zozeer door de kou, maar door de stilte die bleef hangen nadat alles anders werd.",
-    "datum": "2025-03-02",
-    "schrijver": "Marcel (Pappa)",
-    "tag": "Voorbeeld"
+    "filename": "2021-12-05-sinterklaas-kapoentje",
+    "cover": "/assets/posts/images/sinterklaas.jpg",
+    "titel": "Brief aan Henry: Sinterklaas kapoentje",
+    "bijschrift": "Dat pappa en mamma met-zonder-jou moeilijke momenten gaan krijgen, hadden we ons al gerealiseerd. Dat al deze moeilijke momenten zo snel op jouw geboorte zouden zitten, realiseerde we ons afgelopen week.",
+    "datum": "2021-12-05",
+    "schrijver": "Esmee (Mamma)",
+    "tags": [
+      "Brief",
+      "Mijlpaal"
+    ],
+    "highlight": 1
   },
   {
-    "filename": "2025-01-15-post-1",
+    "filename": "2021-11-27-twee-weken-oud",
     "cover": "/assets/posts/images/winterlicht.png",
-    "titel": "Terugblik op een stille winter",
-    "bijschrift": "De winter was lang dit jaar. Niet zozeer door de kou, maar door de stilte die bleef hangen nadat alles anders werd.",
-    "datum": "2025-03-02",
-    "schrijver": "Marcel (Pappa)",
-    "tag": "Voorbeeld"
+    "titel": "Brief aan Henry: 2 weken oud",
+    "bijschrift": "We zijn nu 2 weken met-zonder-jou, 2 hectische turbulente weken. De tijd gaat zo snel, maar tegelijkertijd staat de tijd stil.",
+    "datum": "2021-11-27",
+    "schrijver": "Esmee (Mamma)",
+    "tags": [
+      "Brief"
+    ],
+    "highlight": 2
   },
   {
-    "filename": "2025-01-15-post-2",
+    "filename": "2021-11-10",
     "cover": "/assets/posts/images/winterlicht.png",
-    "titel": "Terugblik op een stille winter",
-    "bijschrift": "De winter was lang dit jaar. Niet zozeer door de kou, maar door de stilte die bleef hangen nadat alles anders werd.",
-    "datum": "2025-03-02",
-    "schrijver": "Marcel (Pappa)",
-    "tag": "Voorbeeld"
-  },
-  {
-    "filename": "2025-01-15-post-3",
-    "cover": "/assets/posts/images/winterlicht.png",
-    "titel": "Terugblik op een stille winter",
-    "bijschrift": "De winter was lang dit jaar. Niet zozeer door de kou, maar door de stilte die bleef hangen nadat alles anders werd.",
-    "datum": "2025-03-02",
-    "schrijver": "Marcel (Pappa)",
-    "tag": "Voorbeeld"
-  },
-  {
-    "filename": "2025-01-15-post-4",
-    "cover": "/assets/posts/images/winterlicht.png",
-    "titel": "Terugblik op een stille winter",
-    "bijschrift": "De winter was lang dit jaar. Niet zozeer door de kou, maar door de stilte die bleef hangen nadat alles anders werd.",
-    "datum": "2025-03-02",
-    "schrijver": "Marcel (Pappa)",
-    "tag": "Voorbeeld"
-  },
-  {
-    "filename": "2025-01-15-post-5",
-    "cover": "/assets/posts/images/winterlicht.png",
-    "titel": "Terugblik op een stille winter",
-    "bijschrift": "De winter was lang dit jaar. Niet zozeer door de kou, maar door de stilte die bleef hangen nadat alles anders werd.",
-    "datum": "2025-03-02",
-    "schrijver": "Marcel (Pappa)",
-    "tag": "Voorbeeld"
+    "titel": "10 November 2021",
+    "bijschrift": "Ik geniet vandaag van de aandacht van alle mensen die ik voor de laatste keer zie voordat ik met verlof ga. Iedereen vraagt hoe het gaat en hoe ik me voel.",
+    "datum": "2021-11-10",
+    "schrijver": "Esmee (Mamma)",
+    "tags": [
+      "Persoonlijk"
+    ],
+    "highlight": 3
   }
 ]
