@@ -42,7 +42,7 @@ export const useRecommendations = () => {
         const candidates = blogs.filter(blog => blog.filename !== currentBlog.filename);
         const scored = calculateScores(candidates, currentBlog);
 
-        const sorted =  scored.sort((a, b) => b.score - a.score || newestFirst(a, b));
+        const sorted =  scored.sort((a, b) => b.score - a.score || newestFirst(a.post, b.post));
 
         // If not enough recommendations, fill with random remaining posts
         const top = sorted.filter(s => s.score > 0).map(s => s.post);

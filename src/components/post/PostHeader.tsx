@@ -4,7 +4,6 @@ import Skeleton from "@mui/material/Skeleton";
 import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
 import {slugify} from "../../utils";
-import * as React from "react";
 
 type PostHeaderProps = { titel: string, datum: string, categorie: string, schrijver: string };
 

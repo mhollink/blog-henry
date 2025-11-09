@@ -15,7 +15,7 @@ export const PostCoverImage = (meta: PostCoverImageProps) => (
         }}
     >
         {!meta.cover ? (
-            <Skeleton variant="rect" sx={{
+            <Skeleton variant="rectangular" sx={{
                 width: '100%',
                 height: '100%',
             }}/>
@@ -23,7 +23,7 @@ export const PostCoverImage = (meta: PostCoverImageProps) => (
             <Box
                 component="img"
                 src={meta.cover}
-                alt={meta.title}
+                alt={meta.titel}
                 sx={{
                     width: '100%',
                     height: '100%',

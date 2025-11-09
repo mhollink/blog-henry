@@ -1,4 +1,5 @@
-import {FunctionComponent, PropsWithChildren, useEffect, useState} from "react";
+import type {FunctionComponent, PropsWithChildren} from 'react'
+import {useEffect, useState} from "react";
 import type {PostMeta} from "../../types/post-meta.ts";
 import {BlogsContext} from "./BlogsContext.tsx";
 import Box from "@mui/material/Box"

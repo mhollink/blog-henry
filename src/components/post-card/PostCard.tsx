@@ -4,12 +4,13 @@ import type {PostMeta} from "../../types/post-meta.ts";
 import Card from "@mui/material/Card"
 import CardContent from "@mui/material/CardContent"
 import CardMedia from '@mui/material/CardMedia';
-import CardActionArea from '@mui/material/CardActionArea';
 import Typography from "@mui/material/Typography"
 import {styled} from "@mui/material/styles";
 import {BlogAuthor} from "../blog-author/BlogAuthor.tsx";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
+import type {OverridableComponent} from "@mui/material/OverridableComponent";
+import type {CardTypeMap} from "@mui/material/Card";
 
 const StyledCard = styled(Card)(({theme}) => ({
     display: 'flex',
@@ -26,7 +27,7 @@ const StyledCard = styled(Card)(({theme}) => ({
         outlineColor: 'hsla(210, 98%, 48%, 0.5)',
         outlineOffset: '2px',
     },
-}));
+})) as OverridableComponent<CardTypeMap>;
 
 const StyledCardContent = styled(CardContent)({
     display: 'flex',
@@ -63,44 +64,41 @@ export const PostCard: FunctionComponent<PostCardProps> = ({post, handleFocus, h
             onBlur={handleBlur}
             tabIndex={0}
             className={focussed ? 'Mui-focused' : ''}
-        >
-            <CardActionArea
-                component={RouterLink}
-                to={`/post/${post.filename}`}
-                sx={{
+            component={RouterLink}
+            to={`/post/${post.filename}`}
+            sx={{
+                textDecoration: 'none',
+                color: 'inherit',
+                '&:hover': {
                     textDecoration: 'none',
-                    color: 'inherit',
-                    '&:hover': {
-                        textDecoration: 'none',
-                    },
-                    '&:focus': {
-                        textDecoration: 'none',
-                    },
+                },
+                '&:focus': {
+                    textDecoration: 'none',
+                },
+            }}
+        >
+            <CardMedia
+                component="img"
+                alt="green iguana"
+                image={post.cover}
+                sx={{
+                    aspectRatio: '16 / 9',
+                    borderBottom: '1px solid',
+                    borderColor: 'divider',
                 }}
-            >
-                <CardMedia
-                    component="img"
-                    alt="green iguana"
-                    image={post.cover}
-                    sx={{
-                        aspectRatio: '16 / 9',
-                        borderBottom: '1px solid',
-                        borderColor: 'divider',
-                    }}
-                />
-                <StyledCardContent>
-                    <Stack component="div" gap={1} direction={"row"}>
-                        <Chip label={post.categorie} color={"primary"} size={"small"}/>
-                    </Stack>
-                    <Typography gutterBottom variant="h6" component="div" fontWeight="600">
-                        {post.titel}
-                    </Typography>
-                    <StyledTypography variant="body2" color="text.secondary" gutterBottom>
-                        {post.bijschrift}
-                    </StyledTypography>
-                </StyledCardContent>
-                <BlogAuthor schrijver={post.schrijver} datum={post.datum}/>
-            </CardActionArea>
+            />
+            <StyledCardContent>
+                <Stack component="div" gap={1} direction={"row"}>
+                    <Chip label={post.categorie} color={"primary"} size={"small"}/>
+                </Stack>
+                <Typography gutterBottom variant="h6" component="div" fontWeight="600">
+                    {post.titel}
+                </Typography>
+                <StyledTypography variant="body2" color="text.secondary" gutterBottom>
+                    {post.bijschrift}
+                </StyledTypography>
+            </StyledCardContent>
+            <BlogAuthor schrijver={post.schrijver} datum={post.datum}/>
         </StyledCard>
     )
 

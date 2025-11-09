@@ -9,13 +9,8 @@ import {extractToc} from "../../utils/table-of-contents.ts";
 import {slugify} from "../../utils";
 
 marked.use({
-    useNewRenderer: true,
     renderer: {
-        heading(text, depth) {
-            if (typeof text !== 'string') {
-                depth = text.depth;
-                text = text.text;
-            }
+        heading({ text, depth}) {
             const id = text.toLowerCase().replace(/[^\w]+/g, '-').replace(/^-|-$/g, '');
             return `<h${depth} id="${id}">${text}</h${depth}>\n`;
         },
@@ -29,8 +24,10 @@ export const PostContent = ({titel, content}: { titel: string, content: string }
 
     return (
         <Grid container spacing={8} columns={12}>
-            <Grid size={{ md: 4}} sx={{ display: { md: "block", xs: 'none' }}}>
-                <Typography variant="h5" component="h5">Inhoud</Typography>
+            <Grid size={{md: 4}} sx={{display: {md: "block", xs: 'none'}}}>
+                <Typography variant="h5" color="text.secondary" component="div" fontWeight="600">
+                    Inhoud
+                </Typography>
                 <List>
                     {[titelHeader, ...documentHeaders].map((item) => (
                         <ListItem key={item.id} sx={{pl: (item.level - 1) * 2}} component="a" href={`#${item.id}`}>
