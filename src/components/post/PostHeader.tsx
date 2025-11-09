@@ -1,0 +1,43 @@
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
+import Skeleton from "@mui/material/Skeleton";
+import Chip from "@mui/material/Chip";
+import Typography from "@mui/material/Typography";
+import {slugify} from "../../utils";
+
+type PostHeaderProps = { titel: string, datum: string, tags: string[], schrijver: string };
+
+export const PostHeader = (meta: PostHeaderProps) =>
+    !meta.titel ? (
+        <Box component="section">
+            <Stack component="div" gap={1} direction={"row"} justifyContent="center">
+                <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '10ch'}}/>
+            </Stack>
+            <Stack component="div" gap={1} direction={"row"} justifyContent="center">
+                <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '66ch'}}/>
+            </Stack>
+            <Stack component="div" gap={1} direction={"row"} justifyContent="center">
+                <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '20ch'}}/>
+                <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '8ch'}}/>
+            </Stack>
+        </Box>
+    ) : (
+        <Box component="section">
+            <Stack component="div" gap={1} direction={"row"} justifyContent="center">
+                {meta.tags.map((tag, index) => (
+                    <Chip label={tag} key={index} color={"primary"} size={"small"}/>
+                ))}
+            </Stack>
+            <Typography variant={"h2"} component="h2" textAlign={"center"} sx={{my: 2}} id={slugify(meta.titel)}>
+                {meta.titel}
+            </Typography>
+            <Stack component="div" gap={1} direction={"row"} justifyContent="center">
+                <Typography color="text.secondary" variant="body2">
+                    {meta.schrijver},
+                </Typography>
+                <Typography color="text.secondary" variant="body2">
+                    {meta.datum}
+                </Typography>
+            </Stack>
+        </Box>
+    );

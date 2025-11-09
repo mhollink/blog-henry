@@ -120,7 +120,7 @@ const blogSizes = [
     {xs: 12, md: 4}
 ]
 
-export const Blog = () => {
+export const BlogList = () => {
     const [posts, setPosts] = useState<PostMeta[]>([]);
     const [visiblePosts, setVisiblePosts] = useState<PostMeta[]>([]);
     const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(null);
