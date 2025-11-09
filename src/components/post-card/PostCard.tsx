@@ -90,8 +90,7 @@ export const PostCard: FunctionComponent<PostCardProps> = ({post, handleFocus, h
                 />
                 <StyledCardContent>
                     <Stack component="div" gap={1} direction={"row"}>
-                        {post.tags.map((tag, index) => <Chip label={tag} key={index} color={"primary"}
-                                                             size={"small"}/>)}
+                        <Chip label={post.categorie} color={"primary"} size={"small"}/>
                     </Stack>
                     <Typography gutterBottom variant="h6" component="div" fontWeight="600">
                         {post.titel}

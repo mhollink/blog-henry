@@ -42,7 +42,7 @@ function Post({filename}: { filename: string }) {
                 </Button>
             </Box>
             <PostView meta={meta} content={content}/>
-            <ReadNext/>
+            <ReadNext currentBlog={{filename, ...meta}}/>
         </Container>
 
     );

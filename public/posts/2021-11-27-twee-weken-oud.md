@@ -1,10 +1,11 @@
 ---
+schrijver: "Esmee (Mamma)"
+datum: "2021-11-27"
+categorie: "Brief"
+onderwerpen: ["tijd", "rouw"]
 cover: "/assets/posts/images/winterlicht.png"
 titel: "Brief aan Henry: 2 weken oud"
 bijschrift: "We zijn nu 2 weken met-zonder-jou, 2 hectische turbulente weken. De tijd gaat zo snel, maar tegelijkertijd staat de tijd stil."
-datum: "2021-11-27"
-schrijver: "Esmee (Mamma)"
-tags: ["Brief"]
 ---
 
 Lieve Henry,

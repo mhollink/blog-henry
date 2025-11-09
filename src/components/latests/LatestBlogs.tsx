@@ -84,9 +84,7 @@ export function LatestBlogs({blogs}: {blogs: PostMeta[]}) {
                                 height: '100%',
                             }}
                         >
-                            <Stack component="div" gap={1} direction={"row"}>
-                                {blog.tags.map((tag, index) => (<Chip key={index} label={tag} variant="outlined" size={"small"} />))}
-                            </Stack>
+                            <Chip label={blog.categorie} variant="outlined" size={"small"} />
                             <TitleTypography
                                 gutterBottom
                                 variant="h6"

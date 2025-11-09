@@ -1,10 +1,11 @@
 ---
+schrijver: "Esmee (Mamma)"
+datum: "2021-12-05"
+categorie: "Brief"
+onderwerpen: []
 cover: "/assets/posts/images/sinterklaas.jpg"
 titel: "Brief aan Henry: Sinterklaas kapoentje"
 bijschrift: "Dat pappa en mamma met-zonder-jou moeilijke momenten gaan krijgen, hadden we ons al gerealiseerd. Dat al deze moeilijke momenten zo snel op jouw geboorte zouden zitten, realiseerde we ons afgelopen week."
-datum: "2021-12-05"
-schrijver: "Esmee (Mamma)"
-tags: ["Brief", "Mijlpaal"]
 ---
 
 Lieve Henry,

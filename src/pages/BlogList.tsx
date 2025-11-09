@@ -144,7 +144,7 @@ export const BlogList = () => {
         if (activeCategory === "Alle categorieën") {
             setVisiblePosts(blogs);
         } else {
-            setVisiblePosts(blogs.filter(post => post.tags.includes(activeCategory)));
+            setVisiblePosts(blogs.filter(post => post.categorie === activeCategory));
         }
     }, [blogs, activeCategory]);
 
