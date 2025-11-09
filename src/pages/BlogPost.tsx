@@ -3,6 +3,7 @@ import {Link as RouterLink, useParams} from 'react-router-dom';
 import matter from 'gray-matter';
 import type {PostMeta} from "../types/post-meta.ts";
 import {Post as PostView} from "../components/post/Post.tsx";
+import {ReadNext} from "../components/read-next/ReadNext.tsx";
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -41,6 +42,7 @@ function Post({filename}: { filename: string }) {
                 </Button>
             </Box>
             <PostView meta={meta} content={content}/>
+            <ReadNext/>
         </Container>
 
     );

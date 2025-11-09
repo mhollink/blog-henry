@@ -14,6 +14,7 @@ import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
 import {PostCard} from "../components/post-card/PostCard.tsx";
 import {LatestBlogs} from "../components/latests/LatestBlogs.tsx";
 import type {PostMeta} from "../types/post-meta.ts";
+import {useBlogs} from "../components/blog-list-context/useBlogs.ts";
 
 function SearchInput() {
     return (
@@ -96,6 +97,7 @@ function BlogCategory({selectCategory, activeCategory, categories}: {
             >
                 {categories.map((category) => (
                     <Chip
+                        key={category}
                         onClick={() => selectCategory(category)}
                         size="medium"
                         label={category}
@@ -121,7 +123,7 @@ const blogSizes = [
 ]
 
 export const BlogList = () => {
-    const [posts, setPosts] = useState<PostMeta[]>([]);
+    const {blogs} = useBlogs();
     const [visiblePosts, setVisiblePosts] = useState<PostMeta[]>([]);
     const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(null);
     const [activeCategory, setActiveCategory] = React.useState<string>("Alle categorieën");
@@ -139,18 +141,12 @@ export const BlogList = () => {
     };
 
     useEffect(() => {
-        fetch('./posts.json')
-            .then(res => res.json())
-            .then(setPosts);
-    }, []);
-
-    useEffect(() => {
         if (activeCategory === "Alle categorieën") {
-            setVisiblePosts(posts);
+            setVisiblePosts(blogs);
         } else {
-            setVisiblePosts(posts.filter(post => post.tags.includes(activeCategory)));
+            setVisiblePosts(blogs.filter(post => post.tags.includes(activeCategory)));
         }
-    }, [posts, activeCategory]);
+    }, [blogs, activeCategory]);
 
     return (
         <Container
