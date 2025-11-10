@@ -15,7 +15,7 @@ export default async function posts2json() {
             const raw = fs.readFileSync(filePath, "utf8");
             const {data} = matter(raw);
 
-            return {filename, ...data,};
+            return {filename, ...data} as any;
         }).sort((a, b) => {
             if (!a.datum) return 1;
             if (!b.datum) return -1;
