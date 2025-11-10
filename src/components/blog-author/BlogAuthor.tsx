@@ -2,6 +2,7 @@ import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import {slugify} from "../../utils";
+import {inReadableFormat} from "../../utils/date-format.ts";
 
 export const BlogAuthor = ({schrijver, datum}: { schrijver: string, datum: string }) => {
     return (
@@ -19,14 +20,14 @@ export const BlogAuthor = ({schrijver, datum}: { schrijver: string, datum: strin
                 <Avatar
                     alt={schrijver}
                     src={`/assets/schrijvers/${slugify(schrijver)}.png`}
-                    sx={{width: 24, height: 24, bgcolor: theme => theme.palette.primary.main }}
+                    sx={{width: 24, height: 24, bgcolor: theme => theme.palette.primary.main}}
 
                 />
                 <Typography variant="caption">
                     {schrijver}
                 </Typography>
             </Box>
-            <Typography variant="caption">{datum}</Typography>
+            <Typography variant="caption">{inReadableFormat(datum)}</Typography>
         </Box>
     )
 }

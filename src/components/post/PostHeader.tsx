@@ -4,6 +4,7 @@ import Skeleton from "@mui/material/Skeleton";
 import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
 import {slugify} from "../../utils";
+import {inReadableFormat} from "../../utils/date-format.ts";
 
 type PostHeaderProps = { titel: string, datum: string, categorie: string, schrijver: string };
 
@@ -34,7 +35,7 @@ export const PostHeader = (meta: PostHeaderProps) =>
                     {meta.schrijver},
                 </Typography>
                 <Typography color="text.secondary" variant="body2">
-                    {meta.datum}
+                    {inReadableFormat(meta.datum)}
                 </Typography>
             </Stack>
         </Box>
