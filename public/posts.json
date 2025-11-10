@@ -1,17 +1,18 @@
 [
   {
-    "filename": "2021-11-10",
-    "schrijver": "Esmee (Mamma)",
-    "datum": "2025-11-10",
-    "categorie": "Persoonlijk",
+    "filename": "2025-11-13-website-voor-je-verjaardag",
+    "schrijver": "Marcel (Pappa)",
+    "datum": "2025-11-13",
+    "categorie": "Brief",
     "onderwerpen": [
-      "laatste werkdag"
+      "verjaardag",
+      "vier",
+      "mijlpaal"
     ],
-    "cover": "/assets/posts/images/winterlicht.png",
-    "titel": "10 November 2021",
-    "bijschrift": "Ik geniet vandaag van de aandacht van alle mensen die ik voor de laatste keer zie voordat ik met verlof ga. Iedereen vraagt hoe het gaat en hoe ik me voel.",
-    "serie": "voor de bevalling",
-    "serieIndex": 1
+    "cover": "/assets/posts/images/verjaardag-met-oma-twix.jpg",
+    "titel": "Brief aan Henry: Je 4e wolkenverjaardag",
+    "bijschrift": "Naarmate jouw geboortedag dichterbij komt, merkt iedereen om ons heen dat ik sneller gestrest raak, daarom dat ik de afgelopen dagen mijn gedachten bezig heb gehouden met het maken van deze blog pagina.",
+    "verbergen": true
   },
   {
     "filename": "2025-11-09-brief-van-oma-t",
@@ -50,5 +51,19 @@
     "cover": "/assets/posts/images/winterlicht.png",
     "titel": "Brief aan Henry: 2 weken oud",
     "bijschrift": "We zijn nu 2 weken met-zonder-jou, 2 hectische turbulente weken. De tijd gaat zo snel, maar tegelijkertijd staat de tijd stil."
+  },
+  {
+    "filename": "2021-11-10",
+    "schrijver": "Esmee (Mamma)",
+    "datum": "2021-11-10",
+    "categorie": "Persoonlijk",
+    "onderwerpen": [
+      "laatste werkdag"
+    ],
+    "cover": "/assets/posts/images/winterlicht.png",
+    "titel": "10 November 2021",
+    "bijschrift": "Ik geniet vandaag van de aandacht van alle mensen die ik voor de laatste keer zie voordat ik met verlof ga. Iedereen vraagt hoe het gaat en hoe ik me voel.",
+    "serie": "voor de bevalling",
+    "serieIndex": 1
   }
 ]
