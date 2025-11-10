@@ -10,7 +10,7 @@ export default function BlogReloadPlugin() {
         },
 
         // Optionally, watch for changes in public/posts during dev
-        configureServer(server) {
+        configureServer(server: any) {
             const watcher = server.watcher.add('public/posts/**/*.md');
 
             watcher.on('add', async () => await buildPostsIndex());
