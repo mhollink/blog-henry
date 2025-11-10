@@ -56,4 +56,11 @@ export type PostMeta = {
      * aangeraden blog/post.
      */
     serieIndex?: number;
+
+    /**
+     * Dit veld staat je toe om een blog die getoond zou worden op de pagina
+     * actief te verbergen. Dit zorgt ervoor dat hij enkel via een deeplink
+     * beschikbaar is. De gebruiker moet de URL dus weten.
+     */
+    verbergen?: boolean;
 }

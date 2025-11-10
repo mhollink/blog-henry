@@ -5,6 +5,7 @@ import {BlogsContext} from "./BlogsContext.tsx";
 import Box from "@mui/material/Box"
 import CircularProgress from "@mui/material/CircularProgress"
 import Typography from "@mui/material/Typography"
+import {isInFuture} from "../../utils/date-present.ts";
 
 export const BlogsProvider: FunctionComponent<PropsWithChildren> = ({children}) => {
     const [blogs, setBlogs] = useState<PostMeta[]>([]);
@@ -14,7 +15,10 @@ export const BlogsProvider: FunctionComponent<PropsWithChildren> = ({children}) 
         setLoading(true)
         fetch('/posts.json')
             .then(res => res.json())
-            .then(setBlogs)
+            .then((blogs: PostMeta[]) => {
+                const activeBlogs = blogs.filter((blog) => !isInFuture(blog.datum) && blog.verbergen !== true);
+                setBlogs(activeBlogs);
+            })
             .finally(() => setLoading(false))
     }, []);
 
