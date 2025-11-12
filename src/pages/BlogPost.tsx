@@ -50,7 +50,7 @@ function Post({filename}: { filename: string }) {
                     Back
                 </Button>
             </Box>
-            {notFound ? <PostNotFound/> : <PostView meta={meta} content={content}/>}
+            {notFound ? <PostNotFound/> : <PostView meta={meta} content={content} loading={loading} />}
             {!loading && <ReadNext currentBlog={{...meta, filename}}/>}
         </Container>
 
