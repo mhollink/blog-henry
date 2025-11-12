@@ -3,13 +3,15 @@ import {Link as RouterLink} from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Chip from '@mui/material/Chip';
+import type {TypographyTypeMap} from "@mui/material/Typography";
 import Typography from '@mui/material/Typography';
-import { styled } from '@mui/material/styles';
+import Pagination from '@mui/material/Pagination';
+import {styled} from '@mui/material/styles';
 import NavigateNextRoundedIcon from '@mui/icons-material/NavigateNextRounded';
 import {BlogAuthor} from "../blog-author/BlogAuthor.tsx";
+import {chunkArray} from "../../utils";
 import type {PostMeta} from "../../types/post-meta.ts";
 import type {OverridableComponent} from "@mui/material/OverridableComponent";
-import type {TypographyTypeMap} from "@mui/material/Typography";
 
 const StyledTypography = styled(Typography)({
     display: '-webkit-box',
@@ -19,10 +21,10 @@ const StyledTypography = styled(Typography)({
     textOverflow: 'ellipsis',
 });
 
-const TitleTypography = styled(Typography)(({ theme }) => ({
+const TitleTypography = styled(Typography)(({theme}) => ({
     position: 'relative',
     textDecoration: 'none',
-    '&:hover': { cursor: 'pointer' },
+    '&:hover': {cursor: 'pointer'},
     '& .arrow': {
         visibility: 'hidden',
         position: 'absolute',
@@ -56,24 +58,29 @@ const TitleTypography = styled(Typography)(({ theme }) => ({
     },
 })) as OverridableComponent<TypographyTypeMap>;
 
-export function LatestBlogs({blogs}: {blogs: PostMeta[]}) {
-    const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(
-        null,
-    );
+export function LatestBlogs({blogs}: { blogs: PostMeta[] }) {
 
-    const handleFocus = (index: number) => {
-        setFocusedCardIndex(index);
-    };
+    const pageSize = 6;
+    const totalPages = Math.ceil(blogs.length / pageSize);
+    const [page, setPage] = React.useState(1);
+    const [visibleBlogs, setVisibleBlogs] = React.useState<PostMeta[]>([])
 
-    const handleBlur = () => {
-        setFocusedCardIndex(null);
-    };
+    const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(null);
+
+    const handleFocus = (index: number) => setFocusedCardIndex(index);
+    const handleBlur = () => setFocusedCardIndex(null);
+
+    React.useEffect(() => {
+        const pages = chunkArray(blogs, pageSize);
+        const currentPage = pages[page - 1] ?? [];
+        setVisibleBlogs(currentPage)
+    }, [blogs, page])
 
     return (
         <div>
-            <Grid container spacing={8} columns={12} sx={{ my: 4 }}>
-                {blogs.map((blog, index) => (
-                    <Grid key={index} size={{ xs: 12, sm: 6 }}>
+            <Grid container spacing={8} columns={12} sx={{my: 4}}>
+                {visibleBlogs.map((blog, index) => (
+                    <Grid key={index} size={{xs: 12, sm: 6}}>
                         <Box
                             sx={{
                                 display: 'flex',
@@ -84,7 +91,7 @@ export function LatestBlogs({blogs}: {blogs: PostMeta[]}) {
                             }}
                         >
                             <Box>
-                                <Chip label={blog.categorie} variant="outlined" size={"small"} />
+                                <Chip label={blog.categorie} variant="outlined" size={"small"}/>
                             </Box>
                             <TitleTypography
                                 gutterBottom
@@ -109,21 +116,25 @@ export function LatestBlogs({blogs}: {blogs: PostMeta[]}) {
                                 {blog.titel}
                                 <NavigateNextRoundedIcon
                                     className="arrow"
-                                    sx={{ fontSize: '1rem' }}
+                                    sx={{fontSize: '1rem'}}
                                 />
                             </TitleTypography>
                             <StyledTypography variant="body2" color="text.secondary" gutterBottom>
                                 {blog.bijschrift}
                             </StyledTypography>
 
-                            <BlogAuthor schrijver={blog.schrijver} datum={blog.datum} />
+                            <BlogAuthor schrijver={blog.schrijver} datum={blog.datum}/>
                         </Box>
                     </Grid>
                 ))}
             </Grid>
-            {/*<Box sx={{ display: 'flex', flexDirection: 'row', pt: 4, justifyContent: 'center', alignItems: 'center' }}>*/}
-            {/*    <Pagination hidePrevButton hideNextButton count={20} size="small" siblingCount={2} />*/}
-            {/*</Box>*/}
+            {totalPages > 1 && (
+                <Box
+                    sx={{display: 'flex', flexDirection: 'row', pt: 4, justifyContent: 'center', alignItems: 'center'}}>
+                    <Pagination count={totalPages} size="small" siblingCount={2}
+                                onChange={(event, page) => setPage(page)}/>
+                </Box>
+            )}
         </div>
     );
 }
