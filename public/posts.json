@@ -25,7 +25,7 @@
       "mijlpaal"
     ],
     "cover": "/assets/posts/images/verjaardag-met-oma-twix.jpg",
-    "titel": "Brief aan Henry: Verjaardagsdate",
+    "titel": "Verjaardagsdate",
     "bijschrift": "4 had je moeten worden aankomende week, we hadden samen in de speelgoedwinkel gestaan, op zoek naar het perfecte kado. We missen je elke dag een beetje meer, maar in onze gedachten hoor je er altijd bij."
   },
   {
@@ -153,14 +153,64 @@
     "bijschrift": "Op dit moment wil ik huilen, schelden en schreeuwen van de pijn. Onzichtbare pijn, net zo onzichtbaar als jij, maar voor mij net zo aanwezig als de liefde voor jou."
   },
   {
+    "filename": "2022-03-13-weer-in-verwachting",
+    "schrijver": "Esmee (Mamma)",
+    "datum": "2022-03-13",
+    "categorie": "Mijlpaal",
+    "onderwerpen": [],
+    "cover": "/assets/posts/images/vier-maanden-kaartjes.png",
+    "titel": "Weer in verwachting...",
+    "bijschrift": "Afgelopen maand hebben we namens jou een kaartje verstuurd. Een kaartje waarin jij aankondigt dat wij een broertje of zusje verwachten."
+  },
+  {
+    "filename": "2022-02-13-vandaag-drie-maandjes",
+    "schrijver": "Esmee (Mamma)",
+    "datum": "2022-02-13",
+    "categorie": "Mijlpaal",
+    "onderwerpen": [],
+    "cover": "/assets/posts/images/",
+    "titel": "3 maanden.",
+    "bijschrift": "Ik mis je iedere dag, maar gelukkig kan ik nu ook andere dingen doen. Terugkijken naar echo's en me bedenken hoe gezellig het was. Want het was heel gezellig, zo met zijn drietjes."
+  },
+  {
+    "filename": "2021-12-05-je-eerste-sinterklaas",
+    "schrijver": "Esmee (Mamma)",
+    "datum": "2021-12-05",
+    "categorie": "Brief",
+    "onderwerpen": [],
+    "cover": "/assets/posts/images/sinterklaas-2021.png",
+    "titel": "Je eerste sinterklaas",
+    "bijschrift": "Vandaag… Vandaag is de eerste feestdag sinds we zwanger zijn van jou, die niet is zoals het hoort!"
+  },
+  {
     "filename": "2021-12-05-sinterklaas-kapoentje",
     "schrijver": "Esmee (Mamma)",
     "datum": "2021-12-05",
     "categorie": "Brief",
     "onderwerpen": [],
     "cover": "/assets/posts/images/sinterklaas-2021.png",
-    "titel": "Brief aan Henry: Sinterklaas kapoentje",
+    "titel": "Sinterklaas kapoentje",
     "bijschrift": "Dat pappa en mamma met-zonder-jou moeilijke momenten gaan krijgen, hadden we ons al gerealiseerd. Dat al deze moeilijke momenten zo snel op jouw geboorte zouden zitten, realiseerde we ons afgelopen week."
+  },
+  {
+    "filename": "2021-12-24-je-eerste-kerst",
+    "schrijver": "Esmee (Mamma)",
+    "datum": "2021-12-05",
+    "categorie": "Brief",
+    "onderwerpen": [],
+    "cover": "/assets/posts/images/eerste-kerst-metzonder-jouw.png",
+    "titel": "Kerstavond met-zonder-jouw",
+    "bijschrift": "Ik had jou willen leren dat kerst een gevoel is. Dat kerst magisch is en had stiekem de hoop, dat jij net als je mamma, kerstmis ook het hele jaar door bij je zou dragen."
+  },
+  {
+    "filename": "2021-12-31-je-eerste-jaarwisseling",
+    "schrijver": "Esmee (Mamma)",
+    "datum": "2021-12-05",
+    "categorie": "Brief",
+    "onderwerpen": [],
+    "cover": "/assets/posts/images/oudjaar-2021.png",
+    "titel": "Oudjaarsavond...",
+    "bijschrift": "Oudjaarsavond... Je pakje ligt klaar, maar hij zal leeg blijven."
   },
   {
     "filename": "2021-11-27-twee-weken-oud",
@@ -172,7 +222,7 @@
       "rouw"
     ],
     "cover": "/assets/posts/images/winterlicht.png",
-    "titel": "Brief aan Henry: 2 weken oud",
+    "titel": "2 weken oud",
     "bijschrift": "We zijn nu 2 weken met-zonder-jou, 2 hectische turbulente weken. De tijd gaat zo snel, maar tegelijkertijd staat de tijd stil."
   },
   {
@@ -188,5 +238,25 @@
     "bijschrift": "Ik geniet vandaag van de aandacht van alle mensen die ik voor de laatste keer zie voordat ik met verlof ga. Iedereen vraagt hoe het gaat en hoe ik me voel.",
     "serie": "voor de bevalling",
     "serieIndex": 1
+  },
+  {
+    "filename": "2021-12-15-wat-als-je-nog-in-mijn-buik-had-gezeten",
+    "schrijver": "Esmee (Mamma)",
+    "datum": "2021-11-10",
+    "categorie": "Mijlpaal",
+    "onderwerpen": [],
+    "cover": "/assets/posts/images/",
+    "titel": "De kerststemming",
+    "bijschrift": "Eigenlijk had ik een foto van jou rond willen sturen, maar door wat nare reacties op Facebook durfde ik het niet aan."
+  },
+  {
+    "filename": "2021-12-22-de-uitgerekende-datum",
+    "schrijver": "Esmee (Mamma)",
+    "datum": "2021-11-10",
+    "categorie": "Mijlpaal",
+    "onderwerpen": [],
+    "cover": "/assets/posts/images/",
+    "titel": "De uitgerekende datum",
+    "bijschrift": "Vandaag is het D-day. Zowel jij als ik weten dat we daarmee “Due-day” bedoelen. De dag dat jij had mogen komen. Wat voelt deze dag als een klap in mijn gezicht."
   }
 ]

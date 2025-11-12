@@ -4,7 +4,7 @@ datum: "2025-11-09"
 categorie: "Brief"
 onderwerpen: ["verjaardag", "vier", "sinterklaas", "mijlpaal"]
 cover: "/assets/posts/images/verjaardag-met-oma-twix.jpg"
-titel: "Brief aan Henry: Verjaardagsdate"
+titel: "Verjaardagsdate"
 bijschrift: "4 had je moeten worden aankomende week, we hadden samen in de speelgoedwinkel gestaan, op zoek naar het perfecte kado. We missen je elke dag een beetje meer, maar in onze gedachten hoor je er altijd bij."
 ---
 
