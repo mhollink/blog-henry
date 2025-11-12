@@ -74,23 +74,6 @@
     "bijschrift": "Ik zou willen zeggen dat het makkelijker wordt, of normaler word. Ik zou willen zeggen dat het verdriet afneemt en alleen de liefde overblijft. Jammer genoeg is geen van beide waar."
   },
   {
-    "filename": "2022-05-13-een-half-jaar",
-    "schrijver": "Esmee (Mamma)",
-    "datum": "2022-07-13",
-    "categorie": "Mijlpaal",
-    "onderwerpen": [
-      "mijlpaal",
-      "zes",
-      "maanden",
-      "6 maanden",
-      "half",
-      "jaar"
-    ],
-    "cover": "/assets/posts/images/een-half-jaar.png",
-    "titel": "Een half jaar oud",
-    "bijschrift": "Het lijkt gister dat ik je voor het laatst vast heb gehouden, maar in de tussentijd vervagen de herinneringen."
-  },
-  {
     "filename": "2022-07-13-acht-maanden",
     "schrijver": "Esmee (Mamma)",
     "datum": "2022-07-13",
@@ -118,6 +101,56 @@
     "cover": "/assets/posts/images/",
     "titel": "Stiekem nog steeds voor jou",
     "bijschrift": "Om ons heen zijn er heel veel baby'tjes die nu de maat hebben die jij ook ongeveer had moeten hebben. Als ik daar een cadeautje voor maak, maak ik soms stiekem 2 versies... Eentje voor in onze kast."
+  },
+  {
+    "filename": "2022-05-13-een-half-jaar",
+    "schrijver": "Esmee (Mamma)",
+    "datum": "2022-05-13",
+    "categorie": "Mijlpaal",
+    "onderwerpen": [
+      "mijlpaal",
+      "zes",
+      "maanden",
+      "6 maanden",
+      "half",
+      "jaar"
+    ],
+    "cover": "/assets/posts/images/een-half-jaar.png",
+    "titel": "Een half jaar oud",
+    "bijschrift": "Het lijkt gister dat ik je voor het laatst vast heb gehouden, maar in de tussentijd vervagen de herinneringen."
+  },
+  {
+    "filename": "2022-05-04-jaardag-voorbereiding",
+    "schrijver": "Esmee (Mamma)",
+    "datum": "2022-05-04",
+    "categorie": "Persoonlijk",
+    "onderwerpen": [
+      "mijlpaal",
+      "zes",
+      "maanden",
+      "6 maanden",
+      "half",
+      "jaar",
+      "jaardag"
+    ],
+    "cover": "/assets/posts/images/",
+    "titel": "Voorbereidingen voor je verjaardag",
+    "bijschrift": "In het Engels is verjaardag een birthday. Verjaren doe je niet, maar geboren ben je wel."
+  },
+  {
+    "filename": "2022-04-13-de-dertiende-van-de-maand",
+    "schrijver": "Esmee (Mamma)",
+    "datum": "2022-04-13",
+    "categorie": "Persoonlijk",
+    "onderwerpen": [
+      "13e",
+      "dertien",
+      "pijnmoment",
+      "mijlpaal"
+    ],
+    "cover": "/assets/posts/images/vijf-maandjes.png",
+    "titel": "De 13e van de maand",
+    "bijschrift": "Op dit moment wil ik huilen, schelden en schreeuwen van de pijn. Onzichtbare pijn, net zo onzichtbaar als jij, maar voor mij net zo aanwezig als de liefde voor jou."
   },
   {
     "filename": "2021-12-05-sinterklaas-kapoentje",

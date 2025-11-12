@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import {slugify} from "../../utils";
 import {inReadableFormat} from "../../utils/date-format.ts";
 
-type PostHeaderProps = { titel: string, datum: string, categorie: string, schrijver: string };
+type PostHeaderProps = { titel: string, datum?: string, categorie: string, schrijver?: string };
 
 export const PostHeader = (meta: PostHeaderProps) =>
     !meta.titel ? (

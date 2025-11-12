@@ -1,6 +1,6 @@
 ---
 schrijver: "Esmee (Mamma)"
-datum: "2022-07-13"
+datum: "2022-05-13"
 categorie: "Mijlpaal"
 onderwerpen: [ "mijlpaal", "zes", "maanden", "6 maanden", "half", "jaar" ]
 cover: "/assets/posts/images/een-half-jaar.png"
