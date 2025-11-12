@@ -5,7 +5,6 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import StarIcon from '@mui/icons-material/Star';
 
 function Copyright() {
@@ -13,7 +12,7 @@ function Copyright() {
         <Typography variant="body2" sx={{color: 'text.secondary', mt: 1}}>
             {'Copyright © '}
             <Link color="text.secondary" href="https://marcelhollink.nl">
-                Marcel Hollink
+                Esmee & Marcel Hollink - van Kuijk
             </Link>
             &nbsp;
             {new Date().getFullYear()}
@@ -77,15 +76,6 @@ export const Footer = () => (
                     sx={{alignSelf: 'center'}}
                 >
                     <GitHubIcon/>
-                </IconButton>
-                <IconButton
-                    color="inherit"
-                    size="small"
-                    href="https://www.linkedin.com/in/mhollink"
-                    aria-label="LinkedIn"
-                    sx={{alignSelf: 'center'}}
-                >
-                    <LinkedInIcon/>
                 </IconButton>
             </Stack>
         </Box>
