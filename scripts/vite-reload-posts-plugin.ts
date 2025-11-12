@@ -1,4 +1,5 @@
-import buildPostsIndex from "./posts2json";
+import {posts2json} from "./posts2json";
+import {generateRSS} from "./posts2rss";
 
 export default function BlogReloadPlugin() {
     return {
@@ -6,16 +7,22 @@ export default function BlogReloadPlugin() {
 
         // Runs before dev server starts
         async buildStart() {
-            await buildPostsIndex();
+            await posts2json();
+            await generateRSS();
         },
 
         // Optionally, watch for changes in public/posts during dev
         configureServer(server: any) {
+            const rebuild = async () => {
+                await posts2json();
+                await generateRSS();
+            };
+
             const watcher = server.watcher.add('public/posts/**/*.md');
 
-            watcher.on('add', async () => await buildPostsIndex());
-            watcher.on('change', async () => await buildPostsIndex());
-            watcher.on('unlink', async () => await buildPostsIndex());
+            watcher.on('add', rebuild);
+            watcher.on('change', rebuild);
+            watcher.on('unlink', rebuild);
         },
     };
 }

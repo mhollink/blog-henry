@@ -1,5 +1,5 @@
 import {defineConfig} from 'vite'
-import { analyzer } from 'vite-bundle-analyzer'
+import {analyzer} from 'vite-bundle-analyzer'
 import react from '@vitejs/plugin-react'
 import blogReloadPlugin from "./scripts/vite-reload-posts-plugin.ts"
 

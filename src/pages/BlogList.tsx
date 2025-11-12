@@ -51,7 +51,9 @@ function BlogSearch({breakpoint}: { breakpoint: "sm" | "xs" }) {
         >
             <SearchInput/>
             <IconButton size="small" aria-label="RSS feed"
-                        sx={{minWidth: 40, aspectRatio: 1}}>
+                        sx={{minWidth: 40, aspectRatio: 1}}
+                        component="a"
+                        href="https://henry.hollink.dev/rss.xml">
                 <RssFeedRoundedIcon/>
             </IconButton>
         </Box>

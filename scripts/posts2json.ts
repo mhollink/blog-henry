@@ -5,7 +5,7 @@ import matter from "gray-matter";
 const postsDir = path.resolve("public/posts");
 const outputFile = path.resolve("public/posts.json");
 
-export default async function posts2json() {
+export async function posts2json() {
     const posts = fs
         .readdirSync(postsDir)
         .filter((file) => file.endsWith(".md"))
@@ -23,5 +23,5 @@ export default async function posts2json() {
         });
 
     fs.writeFileSync(outputFile, JSON.stringify(posts, null, 2), "utf8");
-    console.log(`✅ Generated ${posts.length} posts in ${outputFile}`);
+    console.log(`✅ Generated post-list with ${posts.length} posts`);
 }

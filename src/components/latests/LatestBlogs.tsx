@@ -132,7 +132,7 @@ export function LatestBlogs({blogs}: { blogs: PostMeta[] }) {
                 <Box
                     sx={{display: 'flex', flexDirection: 'row', pt: 4, justifyContent: 'center', alignItems: 'center'}}>
                     <Pagination count={totalPages} size="small" siblingCount={2}
-                                onChange={(event, page) => setPage(page)}/>
+                                onChange={(_, page) => setPage(page)}/>
                 </Box>
             )}
         </div>
