@@ -13,17 +13,4 @@ export default defineConfig({
             fileName: 'analyse.html',
         })
     ],
-    build: {
-        rollupOptions: {
-            output: {
-                manualChunks(id) {
-                    if (id.includes('node_modules')) {
-                        if (id.includes('react')) return 'react';
-                        if (id.includes('@mui') || id.includes('@emotion')) return 'react-mui';
-                        return 'vendor';
-                    }
-                },
-            },
-        },
-    },
 })
