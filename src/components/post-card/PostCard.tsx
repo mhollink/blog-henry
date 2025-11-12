@@ -79,7 +79,7 @@ export const PostCard: FunctionComponent<PostCardProps> = ({post, handleFocus, h
         >
             <CardMedia
                 component="img"
-                alt="green iguana"
+                alt={post.filename}
                 image={post.cover}
                 sx={{
                     aspectRatio: '16 / 9',

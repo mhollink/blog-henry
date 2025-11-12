@@ -9,7 +9,7 @@ export const PostCoverImage = (meta: PostCoverImageProps) => (
         sx={{
             position: 'relative',
             width: '100%',
-            aspectRatio: '16 / 6', // or 4/3, 3/2, etc.
+            aspectRatio: '16 / 8', // or 4/3, 3/2, etc.
             overflow: 'hidden',
             borderRadius: "1rem",
         }}
