@@ -15,7 +15,9 @@ export const PostHeader = (meta: PostHeaderProps) =>
                 <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '10ch'}}/>
             </Stack>
             <Stack component="div" gap={1} direction={"row"} justifyContent="center">
-                <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '66ch'}}/>
+                <Typography variant="h2" color="inherit">
+                    <Skeleton variant="text" animation="wave" sx={{width: '40ch', fontSize: '2.25rem'}}/>
+                </Typography>
             </Stack>
             <Stack component="div" gap={1} direction={"row"} justifyContent="center">
                 <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '20ch'}}/>
@@ -25,18 +27,20 @@ export const PostHeader = (meta: PostHeaderProps) =>
     ) : (
         <Box component="section">
             <Stack component="div" gap={1} direction={"row"} justifyContent="center">
-                <Chip label={meta.categorie} variant="outlined"  />
+                <Chip label={meta.categorie} variant="outlined"/>
             </Stack>
             <Typography variant={"h2"} component="h2" textAlign={"center"} sx={{my: 2}} id={slugify(meta.titel)}>
                 {meta.titel}
             </Typography>
-            <Stack component="div" gap={1} direction={"row"} justifyContent="center">
-                <Typography color="text.secondary" variant="body2">
-                    {meta.schrijver},
-                </Typography>
-                <Typography color="text.secondary" variant="body2">
-                    {inReadableFormat(meta.datum)}
-                </Typography>
-            </Stack>
+            {meta.schrijver && (
+                <Stack component="div" gap={1} direction={"row"} justifyContent="center">
+                    <Typography color="text.secondary" variant="body2">
+                        {meta.schrijver},
+                    </Typography>
+                    <Typography color="text.secondary" variant="body2">
+                        {inReadableFormat(meta.datum)}
+                    </Typography>
+                </Stack>
+            )}
         </Box>
     );

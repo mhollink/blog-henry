@@ -8,6 +8,7 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import {PostNotFound} from "../components/post/PostNotFound.tsx";
 
 export function BlogPost() {
     const {filename} = useParams();
@@ -19,11 +20,17 @@ function Post({filename}: { filename: string }) {
     const [content, setContent] = useState<string>('');
     const [meta, setMeta] = useState<PostMeta>({} as PostMeta);
     const [loading, setLoading] = useState(true);
+    const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
         fetch(`/posts/${filename}.md`)
             .then(res => res.text())
             .then(text => {
+                if (text.startsWith("<!doctype html>")) {
+                    console.warn(`File ${filename}.md resulted in the index.html; post might not exist...`);
+                    setNotFound(true);
+                    return;
+                }
                 const {data, content} = matter(text);
                 if (!data.titel) return;
                 setMeta(data as PostMeta);
@@ -43,8 +50,8 @@ function Post({filename}: { filename: string }) {
                     Back
                 </Button>
             </Box>
-            <PostView meta={meta} content={content}/>
-            { !loading && <ReadNext currentBlog={{...meta, filename}}/> }
+            {notFound ? <PostNotFound/> : <PostView meta={meta} content={content}/>}
+            {!loading && <ReadNext currentBlog={{...meta, filename}}/>}
         </Container>
 
     );

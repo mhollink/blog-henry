@@ -3,10 +3,9 @@ schrijver: "Marcel (Pappa)"
 datum: "2025-11-13"
 categorie: "Brief"
 onderwerpen: [ "verjaardag", "vier", "mijlpaal" ]
-cover: "/assets/posts/images/verjaardag-met-oma-twix.jpg"
+cover: "/assets/posts/images/wolkenverjaardag.jpg"
 titel: "Brief aan Henry: Je 4e wolkenverjaardag"
 bijschrift: "Naarmate jouw geboortedag dichterbij komt, merkt iedereen om ons heen dat ik sneller gestrest raak, daarom dat ik de afgelopen dagen mijn gedachten bezig heb gehouden met het maken van deze blog pagina."
-verbergen: true
 ---
 
 Lieve Henry,

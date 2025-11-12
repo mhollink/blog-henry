@@ -83,7 +83,9 @@ export function LatestBlogs({blogs}: {blogs: PostMeta[]}) {
                                 height: '100%',
                             }}
                         >
-                            <Chip label={blog.categorie} variant="outlined" size={"small"} />
+                            <Box>
+                                <Chip label={blog.categorie} variant="outlined" size={"small"} />
+                            </Box>
                             <TitleTypography
                                 gutterBottom
                                 variant="h6"

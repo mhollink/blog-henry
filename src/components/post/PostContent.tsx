@@ -39,15 +39,24 @@ export const PostContent = ({titel, content}: { titel: string, content: string }
             <Grid size={{xs: 12, md: 8}}>
                 {!content ? (
                     <Stack component="div" direction={"column"}>
-                        <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '100%'}}/>
-                        <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '100%'}}/>
-                        <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '100%'}}/>
-                        <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '100%'}}/>
-                        <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '100%'}}/>
-                        <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '100%'}}/>
-                        <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '100%'}}/>
-                        <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '100%'}}/>
-                        <Skeleton variant="text" animation="wave" sx={{fontSize: '1rem', width: '40%'}}/>
+                        <Typography variant={"body2"}>
+                            <Skeleton variant="text" animation="wave" sx={{ width: '100%'}}/>
+                            <Skeleton variant="text" animation="wave" sx={{ width: '100%'}}/>
+                            <Skeleton variant="text" animation="wave" sx={{ width: '75%'}}/>
+                            <br />
+                            <Skeleton variant="text" animation="wave" sx={{ width: '100%'}}/>
+                            <Skeleton variant="text" animation="wave" sx={{ width: '97%'}}/>
+                            <Skeleton variant="text" animation="wave" sx={{ width: '97%'}}/>
+                            <Skeleton variant="text" animation="wave" sx={{ width: '100%'}}/>
+                            <Skeleton variant="text" animation="wave" sx={{ width: '40%'}}/>
+                            <br />
+                            <Skeleton variant="text" animation="wave" sx={{ width: '100%'}}/>
+                            <Skeleton variant="text" animation="wave" sx={{ width: '100%'}}/>
+                            <Skeleton variant="text" animation="wave" sx={{ width: '95%'}}/>
+                            <Skeleton variant="text" animation="wave" sx={{ width: '95%'}}/>
+                            <Skeleton variant="text" animation="wave" sx={{ width: '100%'}}/>
+                            <Skeleton variant="text" animation="wave" sx={{ width: '60%'}}/>
+                        </Typography>
                     </Stack>
                 ) : (
                     <Typography dangerouslySetInnerHTML={{__html: html}}/>
