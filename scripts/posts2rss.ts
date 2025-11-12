@@ -37,5 +37,5 @@ export async function generateRSS() {
 </rss>`;
 
     fs.writeFileSync(outputFile, rss, 'utf8');
-    console.log(`✅ Generated RSS feed with ${posts.length} posts`);
+    console.log(`✓ Generated RSS feed with ${posts.length} posts`);
 }

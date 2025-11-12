@@ -1,16 +1,12 @@
 import * as React from 'react';
-import {useEffect, useState} from 'react';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import RssFeedRoundedIcon from '@mui/icons-material/RssFeedRounded';
-import type {PostMeta} from "../types/post-meta.ts";
-import {useBlogs} from "../components/blog-list-context/useBlogs.ts";
 import {Blogs} from "../components/blogs/Blogs.tsx";
 import {SearchInput, SearchProvider} from "../components/search";
-
 
 function BlogSearch({
                         breakpoint
@@ -106,7 +102,6 @@ export const BlogList = () => {
     const handleClick = (category: string) => {
         setActiveCategory(category);
     };
-
 
 
     return (

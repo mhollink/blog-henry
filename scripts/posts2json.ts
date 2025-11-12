@@ -23,5 +23,5 @@ export async function posts2json() {
         });
 
     fs.writeFileSync(outputFile, JSON.stringify(posts, null, 2), "utf8");
-    console.log(`✅ Generated post-list with ${posts.length} posts`);
+    console.log(`✓ Generated post-list with ${posts.length} posts`);
 }
