@@ -3,6 +3,7 @@ import {App} from "./app/App.tsx"
 import {BlogList} from "./pages/BlogList.tsx";
 import {BlogPost} from "./pages/BlogPost.tsx";
 import {LegePagina} from "./pages/LegePagina.tsx";
+import {BlogWriter} from "./pages/BlogWriter.tsx";
 
 export const routes: RouteObject[] = [
     {
@@ -10,9 +11,10 @@ export const routes: RouteObject[] = [
         element: <App/>,
         children: [
             {path: "", element: <BlogList/>},
-            {path: "post/:filename", element: <BlogPost />},
-            {path: "over-henry", element: <LegePagina />},
-            {path: "contact", element: <LegePagina />}
+            {path: "post/:filename", element: <BlogPost/>},
+            {path: "schrijven", element: <BlogWriter/>},
+            {path: "over-henry", element: <LegePagina/>},
+            {path: "contact", element: <LegePagina/>}
         ]
     }
 ]
