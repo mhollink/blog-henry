@@ -37,7 +37,7 @@ export const Blogs = ({activeCategory}: BlogsProps) => {
     useEffect(() => {
         const blogsInCat = blogs.filter(post => activeCategory === ALL || post.categorie === activeCategory)
         if (query) {
-            const filtered = blogs
+            const filtered = blogsInCat
                 .map((blog) => ({
                     post: blog,
                     queryString: [blog.titel, blog.schrijver, blog.bijschrift, blog.categorie, ...blog.onderwerpen].join(",").toLowerCase()
