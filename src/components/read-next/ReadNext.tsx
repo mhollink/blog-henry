@@ -21,7 +21,7 @@ export const ReadNext = ({currentBlog}: { currentBlog: PostMeta }) => {
             </Typography>
             <Grid container spacing={2} columns={12}>
                 {recommendations.map(blog =>
-                    <Grid size={{ md: 4, sm: 6, xs: 12}} key={blog.filename}>
+                    <Grid size={{ md: 4, sm: 6, xs: 12}} key={blog.slug}>
                         <PostCard post={blog} handleFocus={() => null} handleBlur={() => null} focussed={false}/>
                     </Grid>)}
 

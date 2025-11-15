@@ -65,7 +65,7 @@ export const PostCard: FunctionComponent<PostCardProps> = ({post, handleFocus, h
             tabIndex={0}
             className={focussed ? 'Mui-focused' : ''}
             component={RouterLink}
-            to={`/post/${post.filename}`}
+            to={`/post/${post.slug}`}
             sx={{
                 textDecoration: 'none',
                 color: 'inherit',
@@ -79,7 +79,7 @@ export const PostCard: FunctionComponent<PostCardProps> = ({post, handleFocus, h
         >
             <CardMedia
                 component="img"
-                alt={post.filename}
+                alt={post.slug}
                 image={post.cover}
                 sx={{
                     aspectRatio: '16 / 9',

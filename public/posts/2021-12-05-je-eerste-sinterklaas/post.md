@@ -3,7 +3,7 @@ schrijver: "Esmee (Mamma)"
 datum: "2021-12-05"
 categorie: "Brief"
 onderwerpen: [ ]
-cover: "/assets/posts/images/sinterklaas-2021.png"
+cover: "./cover.png"
 titel: "Je eerste sinterklaas"
 bijschrift: "Vandaag… Vandaag is de eerste feestdag sinds we zwanger zijn van jou, die niet is zoals het hoort!"
 ---

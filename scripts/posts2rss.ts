@@ -17,8 +17,8 @@ export async function generateRSS() {
         .map((p: any) => `
       <item>
         <title>${p.titel}</title>
-        <link>${baseUrl}/post/${p.filename}</link>
-        <guid>${baseUrl}/post/${p.filename}</guid>
+        <link>${baseUrl}/post/${p.slug}</link>
+        <guid>${baseUrl}/post/${p.slug}</guid>
         <pubDate>${formatDateRFC822(p.datum)}</pubDate>
         <description><![CDATA[${p.bijschrift ?? ''}]]></description>
       </item>

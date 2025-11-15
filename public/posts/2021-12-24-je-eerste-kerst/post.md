@@ -3,7 +3,7 @@ schrijver: "Esmee (Mamma)"
 datum: "2021-12-05"
 categorie: "Brief"
 onderwerpen: [ ]
-cover: "/assets/posts/images/eerste-kerst-metzonder-jouw.png"
+cover: "./cover.png"
 titel: "Kerstavond met-zonder-jouw"
 bijschrift: "Ik had jou willen leren dat kerst een gevoel is. Dat kerst magisch is en had stiekem de hoop, dat jij net als je mamma, kerstmis ook het hele jaar door bij je zou dragen."
 ---

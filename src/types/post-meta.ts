@@ -1,8 +1,8 @@
 export type PostMeta = {
     /**
-     * De naam van het markdown bestand in de /public/posts map.
+     * De naam van de map waarin de blog en bijbehorende bestanden zich bevinden.
      */
-    filename: string;
+    slug: string;
 
     /**
      * De naam van de schrijver van de blog of post

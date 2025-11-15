@@ -3,7 +3,7 @@ schrijver: "Esmee (Mamma)"
 datum: "2022-04-13"
 categorie: "Persoonlijk"
 onderwerpen: [ "13e", "dertien", "pijnmoment", "mijlpaal" ]
-cover: "/assets/posts/images/vijf-maandjes.png"
+cover: "./cover.png"
 titel: "De 13e van de maand"
 bijschrift: "Op dit moment wil ik huilen, schelden en schreeuwen van de pijn. Onzichtbare pijn, net zo onzichtbaar als jij, maar voor mij net zo aanwezig als de liefde voor jou."
 ---

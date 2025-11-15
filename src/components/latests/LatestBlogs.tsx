@@ -101,7 +101,7 @@ export function LatestBlogs({blogs}: { blogs: PostMeta[] }) {
                                 tabIndex={0}
                                 className={focusedCardIndex === index ? 'Mui-focused' : ''}
                                 component={RouterLink}
-                                to={`/post/${blog.filename}`}
+                                to={`/post/${blog.slug}`}
                                 sx={{
                                     textDecoration: 'none',
                                     color: 'inherit',

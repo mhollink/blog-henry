@@ -3,7 +3,7 @@ schrijver: "Esmee (Mamma)"
 datum: "2022-07-13"
 categorie: "Mijlpaal"
 onderwerpen: [ "mijlpaal", "acht", "maanden", "8 maanden" ]
-cover: "/assets/posts/images/acht-maanden.png"
+cover: "./cover.png"
 titel: "8 maandjes oud"
 bijschrift: "Maakt deze foto jou net zo verdrietig als hij mij maakt? Kan je de liefde voelen daarboven als ik met jouw beer knuffel?"
 ---

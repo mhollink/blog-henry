@@ -3,7 +3,7 @@ schrijver: "Esmee (Mamma)"
 datum: "2021-12-05"
 categorie: "Brief"
 onderwerpen: [ ]
-cover: "/assets/posts/images/oudjaar-2021.png"
+cover: "./cover.png"
 titel: "Oudjaarsavond..."
 bijschrift: "Oudjaarsavond... Je pakje ligt klaar, maar hij zal leeg blijven."
 ---

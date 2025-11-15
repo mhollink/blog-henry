@@ -1,6 +1,6 @@
 [
   {
-    "filename": "2025-11-13-website-voor-je-verjaardag",
+    "slug": "2025-11-13-website-voor-je-verjaardag",
     "schrijver": "Marcel (Pappa)",
     "datum": "2025-11-13",
     "categorie": "Brief",
@@ -9,12 +9,12 @@
       "vier",
       "mijlpaal"
     ],
-    "cover": "/assets/posts/images/wolkenverjaardag.jpg",
+    "cover": "/posts/2025-11-13-website-voor-je-verjaardag/cover.jpg",
     "titel": "Brief aan Henry: Je 4e wolkenverjaardag",
     "bijschrift": "Naarmate jouw geboortedag dichterbij komt, merkt iedereen om ons heen dat ik sneller gestrest raak, daarom dat ik de afgelopen dagen mijn gedachten bezig heb gehouden met het maken van deze blog pagina."
   },
   {
-    "filename": "2025-11-09-brief-van-oma-t",
+    "slug": "2025-11-09-brief-van-oma-t",
     "schrijver": "Oma Twix",
     "datum": "2025-11-09",
     "categorie": "Brief",
@@ -24,12 +24,12 @@
       "sinterklaas",
       "mijlpaal"
     ],
-    "cover": "/assets/posts/images/verjaardag-met-oma-twix.jpg",
+    "cover": "/posts/2025-11-09-brief-van-oma-t/cover.jpg",
     "titel": "Verjaardagsdate",
     "bijschrift": "4 had je moeten worden aankomende week, we hadden samen in de speelgoedwinkel gestaan, op zoek naar het perfecte kado. We missen je elke dag een beetje meer, maar in onze gedachten hoor je er altijd bij."
   },
   {
-    "filename": "2022-10-13-elf-maanden-oud",
+    "slug": "2022-10-13-elf-maanden-oud",
     "schrijver": "Esmee (Mamma)",
     "datum": "2022-10-13",
     "categorie": "Mijlpaal",
@@ -39,12 +39,12 @@
       "maanden",
       "11 maanden"
     ],
-    "cover": "/assets/posts/images/rompertjes.png",
+    "cover": "/posts/2022-10-13-elf-maanden-oud/cover.png",
     "titel": "11 maanden",
     "bijschrift": "Het liefst had ik je in november vastgepakt en je nooit meer losgelaten. Dat ik dat sinds die tijd heel erg met jouw spulletjes heb gedaan, blijkt uit de hoeveelheid curverdozen en kastinhoud die staat te verstoffen op de babykamer."
   },
   {
-    "filename": "2022-09-13-tien-maanden-oud",
+    "slug": "2022-09-13-tien-maanden-oud",
     "schrijver": "Esmee (Mamma)",
     "datum": "2022-09-13",
     "categorie": "Mijlpaal",
@@ -54,12 +54,12 @@
       "maanden",
       "10 maanden"
     ],
-    "cover": "/assets/posts/images/tien-maanden-mijlpaal.png",
+    "cover": "/posts/2022-09-13-tien-maanden-oud/cover.png",
     "titel": "10 maanden",
     "bijschrift": "Vandaag heb ik even stilgestaan bij de rozen die na jouw afscheid gegoten zijn door jouw lieve tante. Even stilgestaan bij 4 van de schatten uit jouw schatkist."
   },
   {
-    "filename": "2022-08-13-negen-maanden-oud",
+    "slug": "2022-08-13-negen-maanden-oud",
     "schrijver": "Esmee (Mamma)",
     "datum": "2022-08-13",
     "categorie": "Mijlpaal",
@@ -69,12 +69,12 @@
       "maanden",
       "9 maanden"
     ],
-    "cover": "/assets/posts/images/negen-maanden-mutsjes.png",
+    "cover": "/posts/2022-08-13-negen-maanden-oud/cover.png",
     "titel": "9 maanden",
     "bijschrift": "Ik zou willen zeggen dat het makkelijker wordt, of normaler word. Ik zou willen zeggen dat het verdriet afneemt en alleen de liefde overblijft. Jammer genoeg is geen van beide waar."
   },
   {
-    "filename": "2022-07-13-acht-maanden",
+    "slug": "2022-07-13-acht-maanden",
     "schrijver": "Esmee (Mamma)",
     "datum": "2022-07-13",
     "categorie": "Mijlpaal",
@@ -84,12 +84,12 @@
       "maanden",
       "8 maanden"
     ],
-    "cover": "/assets/posts/images/acht-maanden.png",
+    "cover": "/posts/2022-07-13-acht-maanden/cover.png",
     "titel": "8 maandjes oud",
     "bijschrift": "Maakt deze foto jou net zo verdrietig als hij mij maakt? Kan je de liefde voelen daarboven als ik met jouw beer knuffel?"
   },
   {
-    "filename": "2022-07-09-babykadootjes",
+    "slug": "2022-07-09-babykadootjes",
     "schrijver": "Esmee (Mamma)",
     "datum": "2022-07-09",
     "categorie": "Brief",
@@ -98,12 +98,12 @@
       "maanden",
       "8 maanden"
     ],
-    "cover": "/assets/posts/images/",
+    "cover": "/posts/2022-07-09-babykadootjes/cover.png",
     "titel": "Stiekem nog steeds voor jou",
     "bijschrift": "Om ons heen zijn er heel veel baby'tjes die nu de maat hebben die jij ook ongeveer had moeten hebben. Als ik daar een cadeautje voor maak, maak ik soms stiekem 2 versies... Eentje voor in onze kast."
   },
   {
-    "filename": "2022-05-13-een-half-jaar",
+    "slug": "2022-05-13-een-half-jaar",
     "schrijver": "Esmee (Mamma)",
     "datum": "2022-05-13",
     "categorie": "Mijlpaal",
@@ -115,12 +115,12 @@
       "half",
       "jaar"
     ],
-    "cover": "/assets/posts/images/een-half-jaar.png",
+    "cover": "/posts/2022-05-13-een-half-jaar/cover.png",
     "titel": "Een half jaar oud",
     "bijschrift": "Het lijkt gister dat ik je voor het laatst vast heb gehouden, maar in de tussentijd vervagen de herinneringen."
   },
   {
-    "filename": "2022-05-04-jaardag-voorbereiding",
+    "slug": "2022-05-04-jaardag-voorbereiding",
     "schrijver": "Esmee (Mamma)",
     "datum": "2022-05-04",
     "categorie": "Persoonlijk",
@@ -133,12 +133,12 @@
       "jaar",
       "jaardag"
     ],
-    "cover": "/assets/posts/images/",
+    "cover": "/posts/2022-05-04-jaardag-voorbereiding/cover.png",
     "titel": "Voorbereidingen voor je verjaardag",
     "bijschrift": "In het Engels is verjaardag een birthday. Verjaren doe je niet, maar geboren ben je wel."
   },
   {
-    "filename": "2022-04-13-de-dertiende-van-de-maand",
+    "slug": "2022-04-13-vijf-maanden",
     "schrijver": "Esmee (Mamma)",
     "datum": "2022-04-13",
     "categorie": "Persoonlijk",
@@ -148,82 +148,82 @@
       "pijnmoment",
       "mijlpaal"
     ],
-    "cover": "/assets/posts/images/vijf-maandjes.png",
+    "cover": "/posts/2022-04-13-vijf-maanden/cover.png",
     "titel": "De 13e van de maand",
     "bijschrift": "Op dit moment wil ik huilen, schelden en schreeuwen van de pijn. Onzichtbare pijn, net zo onzichtbaar als jij, maar voor mij net zo aanwezig als de liefde voor jou."
   },
   {
-    "filename": "2022-03-13-weer-in-verwachting",
+    "slug": "2022-03-13-vier-maanden",
     "schrijver": "Esmee (Mamma)",
     "datum": "2022-03-13",
     "categorie": "Mijlpaal",
     "onderwerpen": [],
-    "cover": "/assets/posts/images/vier-maanden-kaartjes.png",
-    "titel": "Weer in verwachting...",
+    "cover": "/posts/2022-03-13-vier-maanden/cover.png",
+    "titel": "Vier maanden",
     "bijschrift": "Afgelopen maand hebben we namens jou een kaartje verstuurd. Een kaartje waarin jij aankondigt dat wij een broertje of zusje verwachten."
   },
   {
-    "filename": "2022-02-13-vandaag-drie-maandjes",
+    "slug": "2022-02-13-vandaag-drie-maandjes",
     "schrijver": "Esmee (Mamma)",
     "datum": "2022-02-13",
     "categorie": "Mijlpaal",
     "onderwerpen": [],
-    "cover": "/assets/posts/images/",
+    "cover": "/posts/2022-02-13-vandaag-drie-maandjes/cover.png",
     "titel": "3 maanden.",
     "bijschrift": "Ik mis je iedere dag, maar gelukkig kan ik nu ook andere dingen doen. Terugkijken naar echo's en me bedenken hoe gezellig het was. Want het was heel gezellig, zo met zijn drietjes."
   },
   {
-    "filename": "2021-12-15-wat-als-je-nog-in-mijn-buik-had-gezeten",
+    "slug": "2021-12-15-wat-als-je-nog-in-mijn-buik-had-gezeten",
     "schrijver": "Esmee (Mamma)",
     "datum": "2021-12-15",
     "categorie": "Mijlpaal",
     "onderwerpen": [],
-    "cover": "/assets/posts/images/",
+    "cover": "/posts/2021-12-15-wat-als-je-nog-in-mijn-buik-had-gezeten/cover.png",
     "titel": "De kerststemming",
     "bijschrift": "Eigenlijk had ik een foto van jou rond willen sturen, maar door wat nare reacties op Facebook durfde ik het niet aan."
   },
   {
-    "filename": "2021-12-05-je-eerste-sinterklaas",
+    "slug": "2021-12-05-je-eerste-sinterklaas",
     "schrijver": "Esmee (Mamma)",
     "datum": "2021-12-05",
     "categorie": "Brief",
     "onderwerpen": [],
-    "cover": "/assets/posts/images/sinterklaas-2021.png",
+    "cover": "/posts/2021-12-05-je-eerste-sinterklaas/cover.png",
     "titel": "Je eerste sinterklaas",
     "bijschrift": "Vandaag… Vandaag is de eerste feestdag sinds we zwanger zijn van jou, die niet is zoals het hoort!"
   },
   {
-    "filename": "2021-12-05-sinterklaas-kapoentje",
+    "slug": "2021-12-05-sinterklaas-kapoentje",
     "schrijver": "Esmee (Mamma)",
     "datum": "2021-12-05",
     "categorie": "Brief",
     "onderwerpen": [],
-    "cover": "/assets/posts/images/sinterklaas-2021.png",
+    "cover": "/posts/2021-12-05-sinterklaas-kapoentje/cover.png",
     "titel": "Sinterklaas kapoentje",
     "bijschrift": "Dat pappa en mamma met-zonder-jou moeilijke momenten gaan krijgen, hadden we ons al gerealiseerd. Dat al deze moeilijke momenten zo snel op jouw geboorte zouden zitten, realiseerde we ons afgelopen week."
   },
   {
-    "filename": "2021-12-24-je-eerste-kerst",
+    "slug": "2021-12-24-je-eerste-kerst",
     "schrijver": "Esmee (Mamma)",
     "datum": "2021-12-05",
     "categorie": "Brief",
     "onderwerpen": [],
-    "cover": "/assets/posts/images/eerste-kerst-metzonder-jouw.png",
+    "cover": "/posts/2021-12-24-je-eerste-kerst/cover.png",
     "titel": "Kerstavond met-zonder-jouw",
     "bijschrift": "Ik had jou willen leren dat kerst een gevoel is. Dat kerst magisch is en had stiekem de hoop, dat jij net als je mamma, kerstmis ook het hele jaar door bij je zou dragen."
   },
   {
-    "filename": "2021-12-31-je-eerste-jaarwisseling",
+    "slug": "2021-12-31-je-eerste-jaarwisseling",
     "schrijver": "Esmee (Mamma)",
     "datum": "2021-12-05",
     "categorie": "Brief",
     "onderwerpen": [],
-    "cover": "/assets/posts/images/oudjaar-2021.png",
+    "cover": "/posts/2021-12-31-je-eerste-jaarwisseling/cover.png",
     "titel": "Oudjaarsavond...",
     "bijschrift": "Oudjaarsavond... Je pakje ligt klaar, maar hij zal leeg blijven."
   },
   {
-    "filename": "2021-11-27-twee-weken-oud",
+    "slug": "2021-11-27-twee-weken-oud",
     "schrijver": "Esmee (Mamma)",
     "datum": "2021-11-27",
     "categorie": "Brief",
@@ -231,31 +231,31 @@
       "tijd",
       "rouw"
     ],
-    "cover": "/assets/posts/images/winterlicht.png",
+    "cover": "/posts/2021-11-27-twee-weken-oud/cover.png",
     "titel": "2 weken oud",
     "bijschrift": "We zijn nu 2 weken met-zonder-jou, 2 hectische turbulente weken. De tijd gaat zo snel, maar tegelijkertijd staat de tijd stil."
   },
   {
-    "filename": "2021-11-10-laatste-werkdag",
+    "slug": "2021-11-10-laatste-werkdag",
     "schrijver": "Esmee (Mamma)",
     "datum": "2021-11-10",
     "categorie": "Persoonlijk",
     "onderwerpen": [
       "laatste werkdag"
     ],
-    "cover": "/assets/posts/images/winterlicht.png",
+    "cover": "/posts/2021-11-10-laatste-werkdag/cover.png",
     "titel": "10 November 2021",
     "bijschrift": "Ik geniet vandaag van de aandacht van alle mensen die ik voor de laatste keer zie voordat ik met verlof ga. Iedereen vraagt hoe het gaat en hoe ik me voel.",
     "serie": "voor de bevalling",
     "serieIndex": 1
   },
   {
-    "filename": "2021-12-22-de-uitgerekende-datum",
+    "slug": "2021-12-22-de-uitgerekende-datum",
     "schrijver": "Esmee (Mamma)",
     "datum": "2021-11-10",
     "categorie": "Mijlpaal",
     "onderwerpen": [],
-    "cover": "/assets/posts/images/",
+    "cover": "/posts/2021-12-22-de-uitgerekende-datum/cover.png",
     "titel": "De uitgerekende datum",
     "bijschrift": "Vandaag is het D-day. Zowel jij als ik weten dat we daarmee “Due-day” bedoelen. De dag dat jij had mogen komen. Wat voelt deze dag als een klap in mijn gezicht."
   }

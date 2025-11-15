@@ -3,7 +3,7 @@ schrijver: "Esmee (Mamma)"
 datum: "2022-09-13"
 categorie: "Mijlpaal"
 onderwerpen: [ "mijlpaal", "tien", "maanden", "10 maanden" ]
-cover: "/assets/posts/images/tien-maanden-mijlpaal.png"
+cover: "./cover.png"
 titel: "10 maanden"
 bijschrift: "Vandaag heb ik even stilgestaan bij de rozen die na jouw afscheid gegoten zijn door jouw lieve tante. Even stilgestaan bij 4 van de schatten uit jouw schatkist."
 ---

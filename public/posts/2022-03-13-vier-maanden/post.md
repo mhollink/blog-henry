@@ -3,8 +3,8 @@ schrijver: "Esmee (Mamma)"
 datum: "2022-03-13"
 categorie: "Mijlpaal"
 onderwerpen: [ ]
-cover: "/assets/posts/images/vier-maanden-kaartjes.png"
-titel: "Weer in verwachting..."
+cover: "./cover.png"
+titel: "Vier maanden"
 bijschrift: "Afgelopen maand hebben we namens jou een kaartje verstuurd. Een kaartje waarin jij aankondigt dat wij een broertje of zusje verwachten."
 ---
 

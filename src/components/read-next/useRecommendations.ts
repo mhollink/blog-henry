@@ -39,7 +39,7 @@ export const useRecommendations = () => {
     }
 
     function getRecommendations(currentBlog: PostMeta, limit = 3) {
-        const candidates = blogs.filter(blog => blog.filename !== currentBlog.filename);
+        const candidates = blogs.filter(blog => blog.slug !== currentBlog.slug);
         const scored = calculateScores(candidates, currentBlog);
 
         const sorted =  scored.sort((a, b) => b.score - a.score || newestFirst(a.post, b.post));

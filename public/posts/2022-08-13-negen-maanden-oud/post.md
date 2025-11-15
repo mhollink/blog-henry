@@ -3,7 +3,7 @@ schrijver: "Esmee (Mamma)"
 datum: "2022-08-13"
 categorie: "Mijlpaal"
 onderwerpen: [ "mijlpaal", "negen", "maanden", "9 maanden" ]
-cover: "/assets/posts/images/negen-maanden-mutsjes.png"
+cover: "./cover.png"
 titel: "9 maanden"
 bijschrift: "Ik zou willen zeggen dat het makkelijker wordt, of normaler word. Ik zou willen zeggen dat het verdriet afneemt en alleen de liefde overblijft. Jammer genoeg is geen van beide waar."
 ---

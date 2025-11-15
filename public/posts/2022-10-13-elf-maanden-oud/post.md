@@ -3,7 +3,7 @@ schrijver: "Esmee (Mamma)"
 datum: "2022-10-13"
 categorie: "Mijlpaal"
 onderwerpen: [ "mijlpaal", "elf", "maanden", "11 maanden" ]
-cover: "/assets/posts/images/rompertjes.png"
+cover: "./cover.png"
 titel: "11 maanden"
 bijschrift: "Het liefst had ik je in november vastgepakt en je nooit meer losgelaten. Dat ik dat sinds die tijd heel erg met jouw spulletjes heb gedaan, blijkt uit de hoeveelheid curverdozen en kastinhoud die staat te verstoffen op de babykamer."
 ---

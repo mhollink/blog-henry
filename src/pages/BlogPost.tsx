@@ -11,23 +11,23 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import {PostNotFound} from "../components/post/PostNotFound.tsx";
 
 export function BlogPost() {
-    const {filename} = useParams();
-    if (!filename) return null;
-    return <Post filename={filename}/>;
+    const {slug} = useParams();
+    if (!slug) return null;
+    return <Post slug={slug}/>;
 }
 
-function Post({filename}: { filename: string }) {
+function Post({slug}: { slug: string }) {
     const [content, setContent] = useState<string>('');
     const [meta, setMeta] = useState<PostMeta>({} as PostMeta);
     const [loading, setLoading] = useState(true);
     const [notFound, setNotFound] = useState(false);
 
     useEffect(() => {
-        fetch(`/posts/${filename}.md`)
+        fetch(`/posts/${slug}/post.md`)
             .then(res => res.text())
             .then(text => {
                 if (text.startsWith("<!doctype html>")) {
-                    console.warn(`File ${filename}.md resulted in the index.html; post might not exist...`);
+                    console.warn(`${slug} resulted in the index.html; post might not exist...`);
                     setNotFound(true);
                     return;
                 }
@@ -37,7 +37,7 @@ function Post({filename}: { filename: string }) {
                 setContent(content);
             })
             .finally(() => setLoading(false));
-    }, [filename]);
+    }, [slug]);
 
     return (
         <Container
@@ -50,8 +50,8 @@ function Post({filename}: { filename: string }) {
                     Back
                 </Button>
             </Box>
-            {notFound ? <PostNotFound/> : <PostView meta={meta} content={content} loading={loading} />}
-            {!loading && <ReadNext currentBlog={{...meta, filename}}/>}
+            {notFound ? <PostNotFound/> : <PostView meta={{...meta, slug}} content={content} loading={loading} />}
+            {!loading && <ReadNext currentBlog={{...meta, slug}}/>}
         </Container>
 
     );

@@ -3,7 +3,7 @@ schrijver: "Esmee (Mamma)"
 datum: "2022-05-13"
 categorie: "Mijlpaal"
 onderwerpen: [ "mijlpaal", "zes", "maanden", "6 maanden", "half", "jaar" ]
-cover: "/assets/posts/images/een-half-jaar.png"
+cover: "./cover.png"
 titel: "Een half jaar oud"
 bijschrift: "Het lijkt gister dat ik je voor het laatst vast heb gehouden, maar in de tussentijd vervagen de herinneringen."
 ---

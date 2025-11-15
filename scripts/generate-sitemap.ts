@@ -19,7 +19,7 @@ export function generateSitemap() {
             loc: `${baseUrl}${route}`,
         })),
         ...posts.map((p: any) => ({
-            loc: `${baseUrl}/post/${p.filename}`,
+            loc: `${baseUrl}/post/${p.slug}`,
             lastmod: p.datum ? new Date(p.datum).toISOString() : undefined,
         })),
     ];

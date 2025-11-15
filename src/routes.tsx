@@ -11,7 +11,7 @@ export const routes: RouteObject[] = [
         element: <App/>,
         children: [
             {path: "", element: <BlogList/>},
-            {path: "post/:filename", element: <BlogPost/>},
+            {path: "post/:slug", element: <BlogPost/>},
             {path: "schrijven", element: <BlogWriter/>},
             {path: "over-henry", element: <LegePagina/>},
             {path: "contact", element: <LegePagina/>}
