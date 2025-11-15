@@ -1,9 +1,8 @@
 import {useState} from 'react';
-import TextField from "@mui/material/TextField"
-import Grid from "@mui/material/Grid"
 import Button from "@mui/material/Button"
-import Typography from "@mui/material/Typography"
 import Container from "@mui/material/Container"
+import {DraftBlog} from "../components/new-blog/DraftBlog.tsx";
+import {NewBlogForm} from "../components/blog-writer/NewBlogForm.tsx";
 
 // TODO: Add series support
 // TODO: Allow for a preview of the blog
@@ -57,70 +56,24 @@ export function BlogWriter() {
     };
 
     return (
-        <Container
-            maxWidth="lg"
-            component="main"
-            sx={{display: 'flex', flexDirection: 'column', my: 16, gap: 4}}
-        >
-            <Typography variant="h4">
-                Nieuw Blogbericht
-            </Typography>
+        <DraftBlog>
+            <Container
+                maxWidth="lg"
+                component="main"
+                sx={{display: 'flex', flexDirection: 'column', my: 16, gap: 4}}
+            >
+                <NewBlogForm/>
 
-            <Grid container spacing={3} columns={12}>
-                <Grid size={{xs: 12}}>
-                    <TextField label="Titel" value={title} onChange={(e) => setTitle(e.target.value)} size="small"
-                               variant="standard" fullWidth/>
-                </Grid>
-                <Grid size={{xs: 12, sm: 8}}>
-                    <TextField label="Auteur" value={author} onChange={(e) => setAuthor(e.target.value)} size="small"
-                               variant="standard" fullWidth/>
-                </Grid>
-                <Grid size={{xs: 12, sm: 4}}>
-                    <TextField type="date" label="Datum" value={date} onChange={(e) => setDate(e.target.value)}
-                               InputLabelProps={{shrink: true}} size="small" variant="standard" fullWidth/>
-                </Grid>
-                <Grid size={{xs: 12, sm: 4}}>
-                    <TextField label="Categorie" value={category} onChange={(e) => setCategory(e.target.value)}
-                               size="small" variant="standard" fullWidth/>
-                </Grid>
-                <Grid size={{xs: 12, sm: 8}}>
-                    <TextField label="Onderwerpen (komma-gescheiden)" value={topics}
-                               onChange={(e) => setTopics(e.target.value)} size="small" variant="standard" fullWidth/>
-                </Grid>
+                <Button
+                    variant="contained"
+                    color="primary"
+                    onClick={handleDownload}
+                    disabled={!title || !content}
+                >
+                    Download Markdown Bestand
+                </Button>
 
-                <Grid size={{xs: 12}}>
-                    <TextField label="Beschrijving (kort)" value={description}
-                               onChange={(e) => setDescription(e.target.value)} size="small" variant="standard"
-                               multiline
-                               maxRows={4}
-                               fullWidth/>
-                </Grid>
-
-                <Grid size={{xs: 12}}>
-                    <Typography variant="h6" mb={1}>
-                        Inhoud
-                    </Typography>
-
-                    <TextField
-                        value={content}
-                        onChange={(e) => setContent(e.target.value)}
-                        multiline
-                        minRows={24}
-                        fullWidth
-                    />
-                </Grid>
-
-                <Grid size={{xs: 12, sm: 6}}>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={handleDownload}
-                        disabled={!title || !content}
-                    >
-                        Download Markdown Bestand
-                    </Button>
-                </Grid>
-            </Grid>
-        </Container>
+            </Container>
+        </DraftBlog>
     );
 }

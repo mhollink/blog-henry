@@ -1,4 +1,4 @@
-import {useBlogs} from "../blog-list-context/useBlogs.ts"
+import {useCurrentBlogs} from "../current-blogs/useCurrentBlogs.ts"
 import type {PostMeta} from "../../types/post-meta.ts";
 
 const scores = {
@@ -7,7 +7,7 @@ const scores = {
 }
 
 export const useRecommendations = () => {
-    const {blogs} = useBlogs();
+    const {blogs} = useCurrentBlogs();
 
     function calculateScores(candidates: PostMeta[], current: PostMeta) {
         return candidates.map(post => {

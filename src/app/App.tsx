@@ -1,15 +1,15 @@
 import {Outlet} from 'react-router-dom';
 import {Header} from "../components/header/Header";
 import {Footer} from "../components/footer/Footer";
-import {BlogsProvider} from "../components/blog-list-context/BlogsProvider.tsx";
+import {CurrentBlogsProvider} from "../components/current-blogs/CurrentBlogsProvider.tsx";
 
 export function App() {
     return (
-        <BlogsProvider>
+        <CurrentBlogsProvider>
             <Header/>
             <Outlet/>
             <Footer/>
-        </BlogsProvider>
+        </CurrentBlogsProvider>
     );
 }
 

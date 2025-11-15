@@ -1,13 +1,13 @@
 import type {FunctionComponent, PropsWithChildren} from 'react'
 import {useEffect, useState} from "react";
 import type {PostMeta} from "../../types/post-meta.ts";
-import {BlogsContext} from "./BlogsContext.tsx";
+import {CurrentBlogsContext} from "./CurrentBlogsContext.ts";
 import Box from "@mui/material/Box"
 import CircularProgress from "@mui/material/CircularProgress"
 import Typography from "@mui/material/Typography"
 import {isInFuture} from "../../utils/date-present.ts";
 
-export const BlogsProvider: FunctionComponent<PropsWithChildren> = ({children}) => {
+export const CurrentBlogsProvider: FunctionComponent<PropsWithChildren> = ({children}) => {
     const [blogs, setBlogs] = useState<PostMeta[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
 
@@ -22,7 +22,7 @@ export const BlogsProvider: FunctionComponent<PropsWithChildren> = ({children}) 
             .finally(() => setLoading(false))
     }, []);
 
-    return (<BlogsContext.Provider value={{blogs}}>
+    return (<CurrentBlogsContext.Provider value={{blogs}}>
         {loading ? (
             <Box
                 sx={{
@@ -43,5 +43,5 @@ export const BlogsProvider: FunctionComponent<PropsWithChildren> = ({children}) 
         ) : (
             children
         )}
-    </BlogsContext.Provider>)
+    </CurrentBlogsContext.Provider>)
 }

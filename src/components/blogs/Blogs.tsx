@@ -4,7 +4,7 @@ import {LatestBlogs} from "../latests/LatestBlogs.tsx";
 import * as React from "react";
 import {useEffect, useState} from "react";
 import type {PostMeta} from "../../types/post-meta.ts";
-import {useBlogs} from "../blog-list-context/useBlogs.ts";
+import {useCurrentBlogs} from "../current-blogs/useCurrentBlogs.ts";
 import {useSearch} from "../search";
 
 const ALL = "Alle categorieën";
@@ -22,7 +22,7 @@ interface BlogsProps {
 }
 
 export const Blogs = ({activeCategory}: BlogsProps) => {
-    const {blogs} = useBlogs();
+    const {blogs} = useCurrentBlogs();
     const {query} = useSearch();
     const [visiblePosts, setVisiblePosts] = useState<PostMeta[]>([]);
     const [focusedCardIndex, setFocusedCardIndex] = React.useState<number | null>(null);

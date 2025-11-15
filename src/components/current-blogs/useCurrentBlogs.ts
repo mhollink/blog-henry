@@ -1,8 +1,8 @@
 import {useContext,} from "react";
-import {BlogsContext} from "./BlogsContext.tsx";
+import {CurrentBlogsContext} from "./CurrentBlogsContext.ts";
 
-export const useBlogs = () => {
-    const context = useContext(BlogsContext);
+export const useCurrentBlogs = () => {
+    const context = useContext(CurrentBlogsContext);
     if (!context) {
         throw new Error("useBlogs must be used within an BlogsProvider");
     }
