@@ -1,9 +1,9 @@
 import {useDraftBlog} from "../new-blog/useDraftBlog.ts";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import TextField from "@mui/material/TextField";
 import * as React from "react";
 import {NewBlogFormInput} from "./NewBlogFormInput.tsx";
+import {MarkdownInput} from "./markdown-input/MarkdownInput.tsx";
 
 export const NewBlogForm = () => {
     const {meta, content, setContent, setPostMeta} = useDraftBlog();
@@ -37,20 +37,7 @@ export const NewBlogForm = () => {
                 <NewBlogFormInput size={12} label={"Beschrijving (kort)"} name={"bijschrift"} value={meta.bijschrift}
                                   onChange={handleMetaFieldChange}/>
 
-
-                <Grid size={12}>
-                    <Typography variant="h6" mb={1}>
-                        Inhoud
-                    </Typography>
-
-                    <TextField
-                        value={content}
-                        onChange={(e) => setContent(e.target.value)}
-                        multiline
-                        minRows={24}
-                        fullWidth
-                    />
-                </Grid>
+                <MarkdownInput size={12} label={"Inhoud"} name="content" value={content} onChange={setContent}/>
             </Grid>
         </>
     )

@@ -3,26 +3,23 @@ import Button from "@mui/material/Button"
 import Container from "@mui/material/Container"
 import {DraftBlog} from "../components/new-blog/DraftBlog.tsx";
 import {NewBlogForm} from "../components/blog-writer/NewBlogForm.tsx";
+import {NewBlogPreview} from "../components/blog-writer/NewBlogPreview.tsx";
+import {useDraftBlog} from "../components/new-blog/useDraftBlog.ts";
 
 // TODO: Add series support
 // TODO: Allow for a preview of the blog
 // TODO: Allow for image uploads and download the blog as zip
 
-export function BlogWriter() {
-    const [title, setTitle] = useState('');
-    const [author, setAuthor] = useState('');
-    const [category, setCategory] = useState('');
-    const [topics, setTopics] = useState('');
-    const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
-    const [description, setDescription] = useState('');
-    const [content, setContent] = useState('');
-
-    const slug = title
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/^-|-$/g, '');
+function BlogWriter() {
+    const [preview, setPreview] = useState(false);
+    const {meta, content} = useDraftBlog();
 
     const handleDownload = () => {
+        const slug = meta.titel
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-|-$/g, '');
+
         const topicsList = topics
             .split(',')
             .map((t) => t.trim())
@@ -55,6 +52,24 @@ export function BlogWriter() {
         URL.revokeObjectURL(url);
     };
 
+
+    return (
+        <>
+            {preview ? <NewBlogPreview/> : <NewBlogForm/>}
+
+            <Button
+                variant="contained"
+                color="primary"
+                onClick={handleDownload}
+                disabled={!meta.titel || !content}
+            >
+                Download Markdown Bestand
+            </Button>
+        </>
+    )
+}
+
+export function BlogWriterPage() {
     return (
         <DraftBlog>
             <Container
@@ -62,17 +77,7 @@ export function BlogWriter() {
                 component="main"
                 sx={{display: 'flex', flexDirection: 'column', my: 16, gap: 4}}
             >
-                <NewBlogForm/>
-
-                <Button
-                    variant="contained"
-                    color="primary"
-                    onClick={handleDownload}
-                    disabled={!title || !content}
-                >
-                    Download Markdown Bestand
-                </Button>
-
+                <BlogWriter />
             </Container>
         </DraftBlog>
     );
