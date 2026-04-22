@@ -6,7 +6,7 @@ const config = siteConfig({
 	author: {
 		name: "Esmee & Marcel Hollink - van Kuijk",
 		email: "contact@marcelhollink.nl",
-		link: "https://marcel.hollink.dev"
+		link: "/about"
 	},
 	description: "A modern Astro theme focused on content creation.",
 	copyright: {
@@ -22,7 +22,7 @@ const config = siteConfig({
 		bericht: 24
 	},
 	heatmap: {
-		unit: "day",
+		unit: "month",
 		weeks: 20
 	},
 	feed: {

@@ -16,6 +16,9 @@
 
 :root,
 [data-theme="light"] {
+    --brand-light: #AED581;
+    --brand-main: #8BC34A;
+    --brand-dark: #689F38;
 	--primary-color: #2a2a28;
 	--secondary-color: #50504d;
 	--remark-color: #757575;
@@ -34,6 +37,9 @@
 }
 
 [data-theme="dark"] {
+    --brand-light: #AED581;
+    --brand-main: #8BC34A;
+    --brand-dark: #689F38;
 	--primary-color: #dddddb;
 	--secondary-color: #aaaaa8;
 	--remark-color: #a5a5a5;
@@ -292,4 +298,25 @@
 	@variant ltr {
 		clip-path: inset(0 0 0 0);
 	}
+}
+
+.brand {
+    color: var(--brand-main);
+}
+.brand-bg {
+    background-color: var(--brand-main);
+}
+
+.brand-light {
+    color: var(--brand-light);
+}
+.brand-bg-light {
+    background-color: var(--brand-light);
+}
+
+.brand-dark {
+    color: var(--brand-dark);
+}
+.brand-bg-dark {
+    background-color: var(--brand-dark);
 }
