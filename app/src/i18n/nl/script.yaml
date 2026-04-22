@@ -1,0 +1,53 @@
+new:
+  article:
+    start: |-
+      ## Eerst kop titel
+
+      Begin hier met je inhoud van het nieuwe bericht...
+  cancel: geannuleerd
+  created: Bestand succesvol aangemaakt!
+  creating: Bestand wordt aangemaakt...
+  done: Klaar! Succes met schrijven!
+  error: Er is een fout opgetreden
+  jotting:
+    description: Een nieuw bericht op de berichten pagina
+    name: Bericht
+  open:
+    error: Kon het bestand niet openen.
+    message: Wil je het nieuwe bestand direct openen?
+  preface:
+    description: Nieuwe tekst voor de landingspagina
+    name: Landingspagina
+    start: Begin hier met je content...
+  preview: Hier is de inhoud van het bestand wat wordt aangemaakt in {path}
+  step:
+    confirm: Wil je doorgaan met het aanmaken van dit bestand?
+    description:
+      name: Beschrijving (optioneel)
+      placeholder: Korte beschrijving van de inhoud van het bericht...
+    id:
+      name: Content-ID / bestandsnaam?
+      placeholder: Voer een content-ID in...
+      validate: >-
+        De content-ID mag alleen letters, cijfers en koppeltekens bevatten en
+        mag niet beginnen of eindigen met een koppelteken
+    options:
+      draft: Markeer als concept
+      name: Selecteer extra opties
+      sensitive: Markeer als gevoelig bericht
+      toc: Toon inhoudsopgave
+      top: Pin dit bericht aan de bovenkant van de berichten pagina
+    overwrite: Bestand {path} bestaat al. Overschrijven?
+    structure:
+      flat: Enkel bestand
+      folder: Map met bestanden (voor afbeeldingen)
+      name: Welke bestandsstructuur wil je gebruiken?
+    tags:
+      name: Tags (komma-gescheiden, optioneel)
+      placeholder: 'bijv.: Persoonlijk, Mijlpaal, Brief, ...'
+    title:
+      name: Titel van het bericht
+      placeholder: Voer een titel in
+      validate: Titel mag niet leeg zijn
+    type: Selecteer contenttype
+  welcome: Nieuw artikel aanmaken

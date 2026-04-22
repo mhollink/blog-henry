@@ -1,0 +1,54 @@
+about:
+  introduction: Over Henry Hollink
+contents: Inhoud
+feed:
+  address: Feed url
+  copy:
+    failure: Kopiëren mislukt, kopieer de url handmatig.
+    name: Kopiëren
+    success: Url gekopieerd naar het klembord.
+  description: Deze pagina kan gebruikt worden als een Atom format content subscription source.
+  last: Laatste geüpdatet op
+  usage: >-
+    U kunt de huidige url in elke ondersteunde reader invoeren om u
+    te abonneren op deze content en tijdig de nieuwste updates te ontvangen.
+  visit: Dit is de RSS feed. Bezoek {title} voor de beste gebruikerservaring.
+home:
+  heatmap:
+    empty: Geen toevoegingen
+    jotting:
+      one: '{count} bericht'
+      other: '{count} berichten'
+  latest: Laatste geplaatste bericht
+  prefaces: Voorwoord
+jotting:
+  empty: Geen berichten gevonden
+  tag: Tags
+language: Nederlands
+navigation:
+  about: Over Henry
+  home: Home
+  jotting: Berichten
+  policy: Cookie- en privacy beleid
+  preface: Voorwoord
+  subscription: RSS-Feed
+read:
+  words:
+    one: '{count} woord'
+    other: '{count} woorden'
+sensitive:
+  back: Terug naar lijst van berichten
+  continue: Ik begrijp het, ga door
+  description: >-
+    Dit bericht gaat over een gevoelig onderwerp en kan emoties oproepen.
+  feed: >
+    <p>Dit bericht gaat over een gevoelig onderwerp en kan emoties oproepen.</p>
+
+    <p>Om deze te kunnen lezen vragen we je naar de <a href="{link}">originele pagina</a> te gaan.</p>
+  icon: Bevat een gevoelig onderwerp
+  title: Waarschuwing
+  warning: Lees alleen verder als het voor jou goed voelt
+statistics:
+  one: "{count} geschreven woord"
+  other: "{count} geschreven woorden"
+theme: 'Theme: ThoughtLite'
