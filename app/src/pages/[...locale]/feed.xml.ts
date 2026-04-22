@@ -61,23 +61,23 @@ export const GET: APIRoute = async ({ site, params }) => {
 		items.push(...notes);
 	}
 
-	if (sections === "*" || sections.includes("jotting")) {
-		const jottings = await getCollection("jotting", jotting => {
+	if (sections === "*" || sections.includes("bericht")) {
+		const berichten = await getCollection("bericht", bericht => {
 			// Apply filtering criteria
-			const published = !jotting.data.draft; // Exclude draft posts
-			const localed = monolocale || jotting.id.split("/")[0] === language; // Language filter
+			const published = !bericht.data.draft; // Exclude draft posts
+			const localed = monolocale || bericht.id.split("/")[0] === language; // Language filter
 
-			// Include jotting only if it passes all filters
+			// Include bericht only if it passes all filters
 			return published && localed;
 		});
 
-		// Attach locale and link for each jotting
-		jottings.forEach(jotting => {
-			const id = monolocale ? jotting.id : jotting.id.split("/").slice(1).join("/");
-			Reflect.set(jotting, "link", new URL(getRelativeLocaleUrl(language, `/jotting/${id}`), site).toString());
+		// Attach locale and link for each bericht
+		berichten.forEach(bericht => {
+			const id = monolocale ? bericht.id : bericht.id.split("/").slice(1).join("/");
+			Reflect.set(bericht, "link", new URL(getRelativeLocaleUrl(language, `/bericht/${id}`), site).toString());
 		});
 
-		items.push(...jottings);
+		items.push(...berichten);
 	}
 
 	// Sort all items by timestamp and limit to configured number

@@ -20,7 +20,7 @@ const config = siteConfig({
 	},
 	pagination: {
 		note: 15,
-		jotting: 24
+		bericht: 24
 	},
 	heatmap: {
 		unit: "day",

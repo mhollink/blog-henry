@@ -6,7 +6,7 @@ import Icon from "$components/Icon.svelte";
 import Pagination from "$components/Pagination.svelte";
 import i18nit from "$i18n";
 
-let { locale, jottings, tags: tagList }: { locale: string; jottings: any[]; tags: string[] } = $props();
+let { locale, berichten, tags: tagList }: { locale: string; berichten: any[]; tags: string[] } = $props();
 
 const t = i18nit(locale);
 
@@ -14,7 +14,7 @@ const t = i18nit(locale);
 let initial = $state(true);
 
 /** Pagination size */
-const size: number = config.pagination?.jotting || 24;
+const size: number = config.pagination?.bericht || 24;
 
 let pages: number = $state(1);
 let page: number = $state(1);
@@ -38,11 +38,11 @@ function switchTag(tag: string, turn?: boolean) {
 	page = 1;
 }
 
-/** Filtered and paginated list of jottings */
+/** Filtered and paginated list of berichten */
 let list: any[] = $derived.by(() => {
-	let filtered: any[] = jottings
-		// Check if jotting contains all specified tags
-		.filter(jotting => tags.every(tag => jotting.data.tags?.includes(tag)))
+	let filtered: any[] = berichten
+		// Check if bericht contains all specified tags
+		.filter(bericht => tags.every(tag => bericht.data.tags?.includes(tag)))
 		// Sort by timestamp (newest first)
 		.sort((a, b) => b.data.top - a.data.top || b.data.timestamp.getTime() - a.data.timestamp.getTime());
 
@@ -92,21 +92,21 @@ $effect(() => {
 <main class="flex flex-col-reverse sm:flex-row gap-10 grow">
 	<article class="flex flex-col grow">
 		<header class="grid grid-cols-[repeat(auto-fill,minmax(250px,1fr))] gap-5">
-			{#each list as jotting (jotting.id)}
+			{#each list as bericht (bericht.id)}
 				<section animate:flip={{ duration: 150 }} class="flex flex-col justify-center border-b border-dashed border-b-weak pb-1">
 					<span class="flex items-center gap-1">
-						{#if jotting.data.top > 0}<Icon name="lucide--flag-triangle-right" class="rtl:-scale-x-100" />{/if}
-						{#if jotting.data.sensitive}<Icon name="lucide--siren" title={t("sensitive.icon")} />{/if}
-						<a href={jotting.url} class="leading-normal text-primary font-semibold link truncate">{jotting.data.title}</a>
+						{#if bericht.data.top > 0}<Icon name="lucide--flag-triangle-right" class="rtl:-scale-x-100" />{/if}
+						{#if bericht.data.sensitive}<Icon name="lucide--siren" title={t("sensitive.icon")} />{/if}
+						<a href={bericht.url} class="leading-normal text-primary font-semibold link truncate">{bericht.data.title}</a>
 					</span>
 					<span class="flex gap-1">
-						{#each jotting.data.tags as tag}
+						{#each bericht.data.tags as tag}
 							<button onclick={() => switchTag(tag, true)} class="text-[0.825rem] text-remark">#{tag}</button>
 						{/each}
 					</span>
 				</section>
 			{:else}
-				<div class="col-span-2 pt-[10vh] text-center text-secondary font-bold text-xl">{t("jotting.empty")}</div>
+				<div class="col-span-2 pt-[10vh] text-center text-secondary font-bold text-xl">{t("bericht.empty")}</div>
 			{/each}
 		</header>
 
@@ -115,7 +115,7 @@ $effect(() => {
 
 	<aside class="sm:basis-50 shrink-0 flex flex-col gap-5">
 		<section>
-			<h4>{t("jotting.tag")}</h4>
+			<h4>{t("bericht.tag")}</h4>
 			<p>
 				{#each tagList as tag (tag)}
 					<button class:selected={tags.includes(tag)} onclick={() => switchTag(tag)}>{tag}</button>

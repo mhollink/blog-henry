@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import config, { monolocale } from "$config";
+import Base from "$layouts/Base.astro";
+import Bericht from "$components/Bericht.svelte";
+import i18nit from "$i18n";
+
+export async function getStaticPaths() {
+	// Create path for each locale, omitting default locale from URL
+	return config.i18n.locales.map(locale => ({ params: { locale: config.i18n.defaultLocale === locale ? undefined : locale } }));
+}
+
+const { locale = config.i18n.defaultLocale } = Astro.params;
+
+const t = i18nit(locale);
+
+const berichten = await getCollection("bericht", bericht => {
+	// Filter by publication status and locale
+	let published = !bericht.data.draft;
+	let localed = monolocale || bericht.id.split("/")[0] === locale;
+
+	return published && localed;
+});
+
+// Standardize note structure
+let list = berichten.map(bericht => ({
+	id: bericht.id,
+	url: getRelativeLocaleUrl(locale, `/bericht/${monolocale ? bericht.id : bericht.id.split("/").slice(1).join("/")}`),
+	data: {
+		title: bericht.data.title,
+		timestamp: bericht.data.timestamp,
+		tags: bericht.data.tags,
+		sensitive: bericht.data.sensitive,
+		top: bericht.data.top
+	}
+}));
+
+// Extract all unique tags from the filtered notes
+const tags = Array.from(new Set(berichten.flatMap(bericht => bericht.data.tags).filter((tag): tag is string => Boolean(tag)))).sort();
+---
+
+<Base title={t("navigation.bericht")} {locale}>
+	<main class="flex flex-col grow">
+		<Bericht client:load {locale} berichten={list} {tags} />
+	</main>
+</Base>

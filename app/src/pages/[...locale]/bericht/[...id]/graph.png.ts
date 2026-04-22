@@ -5,17 +5,17 @@ import graph from "$graph/content";
 import i18nit from "$i18n";
 
 export async function getStaticPaths() {
-	const jottings = await getCollection("jotting", jotting => !jotting.data.draft);
+	const berichten = await getCollection("bericht", bericht => !bericht.data.draft);
 
-	return jottings.map(jotting => {
+	return berichten.map(bericht => {
 		let locale: string | undefined;
 		let id: string;
 
 		if (monolocale) {
 			locale = undefined;
-			id = jotting.id;
+			id = bericht.id;
 		} else {
-			const [language, ...ids] = jotting.id.split("/");
+			const [language, ...ids] = bericht.id.split("/");
 			locale = config.i18n.defaultLocale === language ? undefined : language;
 			id = ids.join("/");
 		}
@@ -23,17 +23,17 @@ export async function getStaticPaths() {
 		return {
 			params: { locale, id },
 			props: {
-				type: i18nit(locale || config.i18n.defaultLocale)(`navigation.jotting`),
-				title: jotting.data.title,
-				time: jotting.data.timestamp.toISOString().split("T")[0].replace(/-/g, "/"),
-				tags: jotting.data.tags
+				type: i18nit(locale || config.i18n.defaultLocale)(`navigation.bericht`),
+				title: bericht.data.title,
+				time: bericht.data.timestamp.toISOString().split("T")[0].replace(/-/g, "/"),
+				tags: bericht.data.tags
 			}
 		};
 	});
 }
 
 /**
- * GET handler that generates and returns the Open Graph image for a jotting.
+ * GET handler that generates and returns the Open Graph image for a bericht.
  */
 export const GET: APIRoute = async ({ params, props }) => {
 	const image = await graph({

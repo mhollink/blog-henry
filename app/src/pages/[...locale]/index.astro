@@ -45,16 +45,16 @@ const notes = await getCollection("note", note => {
 	return published && localed;
 });
 
-// Get published jottings for current locale
-const jottings = await getCollection("jotting", jotting => {
+// Get published berichten for current locale
+const berichten = await getCollection("bericht", bericht => {
 	// Assign type property
-	Reflect.set(jotting, "type", "jotting");
+	Reflect.set(bericht, "type", "bericht");
 
 	// Check monolocale setup or extract language to match locale
-	let localed = monolocale || jotting.id.split("/")[0] === locale;
+	let localed = monolocale || bericht.id.split("/")[0] === locale;
 
 	// Filter published notes by current locale
-	return !jotting.data.draft && localed;
+	return !bericht.data.draft && localed;
 });
 
 // Combine contents
@@ -65,7 +65,7 @@ const sections = config.latest || "*";
 
 // Add contents based on config
 if (sections === "*" || sections.includes("note")) items = items.concat(notes);
-if (sections === "*" || sections.includes("jotting")) items = items.concat(jottings);
+if (sections === "*" || sections.includes("bericht")) items = items.concat(berichten);
 
 // Get the latest content for display
 const latest = items.sort((a, b) => b.data.timestamp.getTime() - a.data.timestamp.getTime())[0];
@@ -99,7 +99,7 @@ const { Content } = preface ? await render(preface) : ({} as any);
 		{
 			latest && (
 				<footer class="flex items-center justify-center flex-wrap-reverse gap-10">
-					<Heatmap {locale} {notes} {jottings} />
+					<Heatmap {locale} {notes} {berichten} />
 
 					<blockquote class="grow flex flex-col">
 						<h4>{t("home.latest")}</h4>

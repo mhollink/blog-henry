@@ -16,19 +16,19 @@ feed:
 home:
   heatmap:
     empty: Geen toevoegingen
-    jotting:
+    bericht:
       one: '{count} bericht'
       other: '{count} berichten'
   latest: Laatste geplaatste bericht
   prefaces: Voorwoord
-jotting:
+bericht:
   empty: Geen berichten gevonden
   tag: Tags
 language: Nederlands
 navigation:
   about: Over Henry
   home: Home
-  jotting: Berichten
+  bericht: Berichten
   policy: Cookie- en privacy beleid
   preface: Voorwoord
   subscription: RSS-Feed

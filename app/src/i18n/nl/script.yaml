@@ -9,7 +9,7 @@ new:
   creating: Bestand wordt aangemaakt...
   done: Klaar! Succes met schrijven!
   error: Er is een fout opgetreden
-  jotting:
+  bericht:
     description: Een nieuw bericht op de berichten pagina
     name: Bericht
   open:

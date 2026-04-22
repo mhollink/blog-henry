@@ -23,10 +23,10 @@ interface ContentItem {
 interface Props {
 	locale: string;
 	notes: ContentItem[];
-	jottings: ContentItem[];
+	berichten: ContentItem[];
 }
 
-let { locale, notes, jottings } = Astro.props;
+let { locale, notes, berichten } = Astro.props;
 
 // Initialize translation function for current locale
 const t = i18nit(locale);
@@ -49,13 +49,13 @@ notes.forEach(note => {
 	});
 });
 
-// Normalize jottings and add to contents list
-jottings.forEach(jotting => {
+// Normalize berichten and add to contents list
+berichten.forEach(bericht => {
 	contents.push({
-		section: "jotting",
-		title: jotting.data.title,
-		date: Time(jotting.data.timestamp.toISOString()).toPlainDate(),
-		link: getRelativeLocaleUrl(locale, `/jotting/${monolocale ? jotting.id : jotting.id.split("/").slice(1).join("/")}`)
+		section: "bericht",
+		title: bericht.data.title,
+		date: Time(bericht.data.timestamp.toISOString()).toPlainDate(),
+		link: getRelativeLocaleUrl(locale, `/bericht/${monolocale ? bericht.id : bericht.id.split("/").slice(1).join("/")}`)
 	});
 });
 
@@ -128,7 +128,7 @@ if (frequency === "month") {
 			// Generate details for the popup based on cell content
 			if (count) {
 				const notes = cell.contents.filter(content => content.section === "note");
-				const jottings = cell.contents.filter(content => content.section === "jotting");
+				const berichten = cell.contents.filter(content => content.section === "bericht");
 
 				if (notes.length) {
 					if (frequency === "month") {
@@ -149,17 +149,17 @@ if (frequency === "month") {
 					}
 				}
 
-				if (jottings.length) {
+				if (berichten.length) {
 					if (frequency === "month") {
-						details.push(<p>{t("home.heatmap.jotting", { count: jottings.length })}</p>);
+						details.push(<p>{t("home.heatmap.bericht", { count: berichten.length })}</p>);
 					} else {
 						details.push(
-							<p class="my-1">{t("home.heatmap.jotting", { count: jottings.length })}：</p>,
+							<p class="my-1">{t("home.heatmap.bericht", { count: berichten.length })}：</p>,
 							<ul class="flex flex-col gap-0.5">
-								{jottings.map(jotting => (
+								{berichten.map(bericht => (
 									<li>
-										<a href={jotting.link} aria-label={jotting.title} class="ms-1 link">
-											{jotting.title}
+										<a href={bericht.link} aria-label={bericht.title} class="ms-1 link">
+											{bericht.title}
 										</a>
 									</li>
 								))}

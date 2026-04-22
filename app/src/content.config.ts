@@ -22,14 +22,14 @@ const note = defineCollection({
 });
 
 /**
- * Jotting collection configuration
+ * Bericht collection configuration
  * Represents shorter posts, quick thoughts, or micro-blog entries
  */
-const jotting = defineCollection({
+const bericht = defineCollection({
 	// Load all markdown files except those starting with underscore
-	loader: glob({ pattern: ["**/*.md", "!**/_*.md", "!**/_*/*.md"], base: "./src/content/jotting" }),
+	loader: glob({ pattern: ["**/*.md", "!**/_*.md", "!**/_*/*.md"], base: "./src/content/bericht" }),
 	schema: z.object({
-		title: z.string(), // Jotting title (required)
+		title: z.string(), // Bericht title (required)
 		timestamp: z.date(), // Publication date (required)
 		tags: z.array(z.string()).optional(), // Array of topic tags
 		description: z.string().optional(), // Brief description
@@ -60,4 +60,4 @@ const information = defineCollection({
 	loader: glob({ pattern: "**/*.{md,mdx,yaml}", base: "./src/content/information" })
 });
 
-export const collections = { note, jotting, preface, information };
+export const collections = { note, bericht, preface, information };
