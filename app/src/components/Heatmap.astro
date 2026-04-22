@@ -22,11 +22,10 @@ interface ContentItem {
  */
 interface Props {
 	locale: string;
-	notes: ContentItem[];
 	berichten: ContentItem[];
 }
 
-let { locale, notes, berichten } = Astro.props;
+let { locale, berichten } = Astro.props;
 
 // Initialize translation function for current locale
 const t = i18nit(locale);
@@ -38,16 +37,6 @@ const cells: { target: string; contents: typeof contents }[] = [];
 // Determine heatmap frequency (default: day)
 const frequency = config.heatmap?.unit || "day";
 const now = Time().toPlainDate();
-
-// Normalize notes and add to contents list
-notes.forEach(note => {
-	contents.push({
-		section: "note",
-		title: note.data.title,
-		date: Time(note.data.timestamp.toISOString()).toPlainDate(),
-		link: getRelativeLocaleUrl(locale, `/note/${monolocale ? note.id : note.id.split("/").slice(1).join("/")}`)
-	});
-});
 
 // Normalize berichten and add to contents list
 berichten.forEach(bericht => {
@@ -127,28 +116,7 @@ if (frequency === "month") {
 
 			// Generate details for the popup based on cell content
 			if (count) {
-				const notes = cell.contents.filter(content => content.section === "note");
 				const berichten = cell.contents.filter(content => content.section === "bericht");
-
-				if (notes.length) {
-					if (frequency === "month") {
-						details.push(<p>{t("home.heatmap.note", { count: notes.length })}</p>);
-					} else {
-						details.push(
-							<p class="my-1">{t("home.heatmap.note", { count: notes.length })}：</p>,
-							<ul class="flex flex-col gap-0.5">
-								{notes.map(note => (
-									<li>
-										<a href={note.link} aria-label={note.title} class="ms-1 link">
-											{note.title}
-										</a>
-									</li>
-								))}
-							</ul>
-						);
-					}
-				}
-
 				if (berichten.length) {
 					if (frequency === "month") {
 						details.push(<p>{t("home.heatmap.bericht", { count: berichten.length })}</p>);

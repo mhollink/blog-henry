@@ -19,7 +19,6 @@ const config = siteConfig({
 		defaultLocale: "nl"
 	},
 	pagination: {
-		note: 15,
 		bericht: 24
 	},
 	heatmap: {

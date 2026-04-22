@@ -39,46 +39,22 @@ export const GET: APIRoute = async ({ site, params }) => {
 	// Aggregate items from specified sections
 	let items = [];
 
-	// Determine which sections to include
-	const sections = config.feed?.section || "*";
+    const berichten = await getCollection("bericht", bericht => {
+        // Apply filtering criteria
+        const published = !bericht.data.draft; // Exclude draft posts
+        const localed = monolocale || bericht.id.split("/")[0] === language; // Language filter
 
-	if (sections === "*" || sections.includes("note")) {
-		const notes = await getCollection("note", note => {
-			// Apply filtering criteria
-			const published = !note.data.draft; // Exclude draft posts
-			const localed = monolocale || note.id.split("/")[0] === language; // Language filter
+        // Include bericht only if it passes all filters
+        return published && localed;
+    });
 
-			// Include note only if it passes all filters
-			return published && localed;
-		});
+    // Attach locale and link for each bericht
+    berichten.forEach(bericht => {
+        const id = monolocale ? bericht.id : bericht.id.split("/").slice(1).join("/");
+        Reflect.set(bericht, "link", new URL(getRelativeLocaleUrl(language, `/bericht/${id}`), site).toString());
+    });
 
-		// Attach locale and link for each note
-		notes.forEach(note => {
-			const id = monolocale ? note.id : note.id.split("/").slice(1).join("/");
-			Reflect.set(note, "link", new URL(getRelativeLocaleUrl(language, `/note/${id}`), site).toString());
-		});
-
-		items.push(...notes);
-	}
-
-	if (sections === "*" || sections.includes("bericht")) {
-		const berichten = await getCollection("bericht", bericht => {
-			// Apply filtering criteria
-			const published = !bericht.data.draft; // Exclude draft posts
-			const localed = monolocale || bericht.id.split("/")[0] === language; // Language filter
-
-			// Include bericht only if it passes all filters
-			return published && localed;
-		});
-
-		// Attach locale and link for each bericht
-		berichten.forEach(bericht => {
-			const id = monolocale ? bericht.id : bericht.id.split("/").slice(1).join("/");
-			Reflect.set(bericht, "link", new URL(getRelativeLocaleUrl(language, `/bericht/${id}`), site).toString());
-		});
-
-		items.push(...berichten);
-	}
+    items.push(...berichten);
 
 	// Sort all items by timestamp and limit to configured number
 	items = items

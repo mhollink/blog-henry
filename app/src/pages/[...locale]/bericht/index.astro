@@ -23,7 +23,7 @@ const berichten = await getCollection("bericht", bericht => {
 	return published && localed;
 });
 
-// Standardize note structure
+// Standardize structure
 let list = berichten.map(bericht => ({
 	id: bericht.id,
 	url: getRelativeLocaleUrl(locale, `/bericht/${monolocale ? bericht.id : bericht.id.split("/").slice(1).join("/")}`),
@@ -36,7 +36,7 @@ let list = berichten.map(bericht => ({
 	}
 }));
 
-// Extract all unique tags from the filtered notes
+// Extract all unique tags after filtering
 const tags = Array.from(new Set(berichten.flatMap(bericht => bericht.data.tags).filter((tag): tag is string => Boolean(tag)))).sort();
 ---
 

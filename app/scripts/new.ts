@@ -20,7 +20,7 @@ const CANCEL_MESSAGE = t("new.cancel");
 	// Determine the base content directory path
 	let path = join(dirname(fileURLToPath(import.meta.url)), "..", "src", "content");
 
-	// Select content type: Note, Bericht, or Preface
+	// Select content type: Bericht or Preface
 	const contentType = await select({
 		message: t("new.step.type"),
 		options: [
@@ -65,7 +65,7 @@ const CANCEL_MESSAGE = t("new.cancel");
 		// Generate filename from timestamp (e.g., 1970-01-01-00-00-00.md)
 		path = join(path, `${timestamp.substring(0, 19).replace(/[\s:]/g, "-")}.md`);
 	} else {
-		// Note and Bericht require additional metadata
+		// Bericht requires additional metadata
 		content += i18nit(locale, "script")("new.article.start");
 
 		// Prompt user to input article title
@@ -105,21 +105,6 @@ const CANCEL_MESSAGE = t("new.cancel");
 		// Exit if user cancels the input
 		isCancel(id) && (cancel(CANCEL_MESSAGE), process.exit(0));
 
-		// If content type is Note, allow user to specify a series
-		if (contentType === "note") {
-			// Prompt user to input series name (optional)
-			const series = await text({
-				message: t("new.step.series.name"),
-				placeholder: t("new.step.series.placeholder")
-			});
-
-			// Exit if user cancels the input
-			isCancel(series) && (cancel(CANCEL_MESSAGE), process.exit(0));
-
-			// Add series to frontmatter if provided
-			if (series) information.series = series;
-		}
-
 		// Prompt user to input tags (comma-separated)
 		const tags = await text({
 			message: t("new.step.tags.name"),
@@ -144,12 +129,11 @@ const CANCEL_MESSAGE = t("new.cancel");
 		// Add description to frontmatter if provided
 		if (description) information.description = description;
 
-		// Prompt user to select additional options (draft, toc, top, sensitive)
+		// Prompt user to select additional options (draft, top, sensitive)
 		const options = await multiselect({
 			message: t("new.step.options.name"),
 			options: [
 				{ label: t("new.step.options.draft"), value: "draft" },
-				...(contentType === "note" ? [{ label: t("new.step.options.toc"), value: "toc" }] : []),
 				{ label: t("new.step.options.top"), value: "top" },
 				{ label: t("new.step.options.sensitive"), value: "sensitive" }
 			],
